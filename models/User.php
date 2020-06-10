@@ -1,4 +1,13 @@
 <?php 
+function getAllUsers()
+{
+    $db = dbConnect();
+
+    $query = $db->query('SELECT * FROM users');
+	$users =  $query->fetchAll();
+
+    return $users;
+}
 
 function getUser($id){
 	$db = dbConnect();

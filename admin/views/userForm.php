@@ -17,11 +17,6 @@
         <label for="password">Mot de passe : </label><br>
         <input class="form-control" type="password" name="password" id="password" value="<?= isset($user) ? $user['password'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['password'] : '' ?>" /><br>
         <label for="is_admin">Status admin :</label><br>
-        <!-- <select name="is_admin" id="is_admin">
-            <?php foreach($users as $user): ?>
-			<option value="<?= $user['is_admin'] ?>"><?= $user['is_admin'] ?></option>
-			<?php endforeach;?>
-		</select><br> -->
 		<select class="form-control" name="is_admin" id="is_admin" size="2">
 			<option value="0">0</option>
 			<option value="1">1</option>

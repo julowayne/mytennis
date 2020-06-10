@@ -377,3 +377,63 @@ a {
     }
   }
 }
+/* page profil */
+.profil {
+    display:flex;
+    text-decoration:none;
+    justify-content: center;
+    padding:15px;
+    background:rgba(lightgrey,.25);
+    color:lightgrey-light;
+    font-size:20px;
+    width: 100%;
+    cursor:pointer;
+    transition:.5s ease;
+    box-shadow:0 1px 3px 1px rgba($color: black, $alpha: .3); 
+    &:hover {
+      background:white;
+      color:orange;
+    }
+}
+
+/* page produit */
+ .product-container {
+   max-width: 1000px;
+   border: 1px solid white;
+   display: flex;
+   margin: 2em auto;
+   img {
+     padding: 2em;
+   } 
+   #description {
+    margin: 2em;
+    border: 1px solid white;
+    background-color: rgba(117, 190, 218, 0.1);
+    width: 600px;
+    height: 55vh;  
+    padding: 2em;
+    div {
+      display: inline-block;
+    }
+    h3 {
+      margin-top: 0;
+      font-size: 30px;
+    }
+    p {
+      font-size: 30px;
+    }
+    #stats {
+      margin-top: 3rem;
+      font-size: 30px;
+      li {
+        list-style-type: none;
+        margin: 0;
+        font-size: 25px;
+      }
+    }
+    #price {
+      margin-left: 40px;
+      font-size: 100px;
+    }
+   }
+ }

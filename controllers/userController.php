@@ -72,16 +72,18 @@ if(isset($_GET['action'])){
 			unset($_SESSION['user']);
      		header('location:index.php');
 			break;
-		case 'profil' :
-			$user = getUser($_GET['id']);
-			require('views/userProfil.php');
-			break;
-		case 'add' :
-			break;
 		case 'edit' :
-				break;
-		case 'delete' :
-			break;		
+		/* 	if(!isset($_SESSION['old_inputs'])){
+				if (isset($_GET['id'])){
+					$user = getUser($_GET['id']);
+				}
+				else {
+					header('Location:index.php?p=users&action=form');
+					exit;
+				}
+			} */
+			require('views/userProfil.php');
+			break;	
         default :
 		header('Location:index.php?controller=users&action=list');
 	}

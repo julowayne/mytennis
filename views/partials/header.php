@@ -34,9 +34,9 @@
                 <div class="dropdown">
                     <a class="dropbtn" href="index.php?p=users&action=form">Compte</a>
                     <div class="dropdown-content">
-                            <a href="#">Profil</a>
+                            <a href="index.php?p=users&action=edit">Profil</a>
                             <?php if (isset($_SESSION['user'])): ?>
-                                <a href="?action=disconnect">déconnexion</a>
+                                <a href="?p=users&action=disconnect">déconnexion</a>
                             <?php endif; ?>
                         </div>
                 </div>  

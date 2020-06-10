@@ -13,7 +13,8 @@ if(isset($_GET['action'])){
 			$productsByCategories = getProductByCategories($productId);
             require('views/racketList.php');  
 			break;
-		case 'login' :
+		case 'raquette' :
+			require('views/product.php'); 
 			break;
 		case 'password' :
 			break;

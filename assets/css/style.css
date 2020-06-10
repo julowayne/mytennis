@@ -378,4 +378,65 @@ a:hover {
   box-shadow: 1px 1px black;
 }
 
+/* page profil */
+.profil {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 15px;
+  background: rgba(211, 211, 211, 0.25);
+  color: lightgrey-light;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.5s ease;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+.profil:hover {
+  background: white;
+  color: orange;
+}
+
+/* page produit */
+.product-container {
+  max-width: 1000px;
+  border: 1px solid white;
+  display: flex;
+  margin: 2em auto;
+}
+.product-container img {
+  padding: 2em;
+}
+.product-container #description {
+  margin: 2em;
+  border: 1px solid white;
+  background-color: rgba(117, 190, 218, 0.1);
+  width: 600px;
+  height: 55vh;
+  padding: 2em;
+}
+.product-container #description div {
+  display: inline-block;
+}
+.product-container #description h3 {
+  margin-top: 0;
+  font-size: 30px;
+}
+.product-container #description p {
+  font-size: 30px;
+}
+.product-container #description #stats {
+  margin-top: 3rem;
+  font-size: 30px;
+}
+.product-container #description #stats li {
+  list-style-type: none;
+  margin: 0;
+  font-size: 25px;
+}
+.product-container #description #price {
+  margin-left: 40px;
+  font-size: 100px;
+}
+
 /*# sourceMappingURL=style.css.map */
