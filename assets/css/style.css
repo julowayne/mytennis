@@ -351,7 +351,7 @@ a:hover {
 #product-list .filters label {
   margin-left: 1rem;
 }
-#product-list .product-container {
+#product-list .products-container {
   max-width: 1200px;
   display: flex;
   flex-flow: row wrap;
@@ -361,14 +361,14 @@ a:hover {
   text-align: center;
   font-size: 10px;
 }
-#product-list .product-container div {
+#product-list .products-container div {
   box-shadow: 1px 3px 3px 1px black;
   height: 430px;
 }
-#product-list .product-container a .card {
+#product-list .products-container a .card {
   cursor: pointer;
 }
-#product-list .product-container .product-head {
+#product-list .products-container .product-head {
   float: right;
   background-color: white;
   color: black;

@@ -39,8 +39,8 @@ if(isset($_GET['action'])){
 			break;
 		case 'edit' :
 			if(!empty($_POST)){
-				if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['is_admin'])){
-					if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['is_admin'])){
+				if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['address'])){
+					if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['address'])){
 
 						$_SESSION['messages'][] = 'Tout les champs sont obligatoires pour modifier un utilisateur !';
 					}
@@ -50,6 +50,9 @@ if(isset($_GET['action'])){
 					}
 			
 					else {
+						if(empty($_POST['is_admin'])){
+							$_POST['is_admin'] = 0;
+						}
 						$result = updateUser($_GET['id'], $_POST);
 						$_SESSION['messages'][] = $result ? '<div class="alert alert-success"> Utilisateur mis à jour ! </div>' : '<div class="alert alert-danger"> Erreur lors de la mise à jour de l utilisateur... :(</div>';
 						header('Location:index.php?controller=users&action=list');

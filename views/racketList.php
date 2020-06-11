@@ -36,7 +36,7 @@
             <label for="racket"><input type="checkbox" class="stay-connected" id="racket" name="racket">Non cordée</label>
         </div>
     </div>
-        <div class="product-container">
+        <div class="products-container">
             <?php foreach($productsByCategories as $productsByCategory): ?>
             <a class="card">
                 <div class="product-head">

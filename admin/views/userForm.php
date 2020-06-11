@@ -14,12 +14,14 @@
 		<input class="form-control" type="text" name="lastname" id="lastname" value="<?= isset($user) ? $user['lastname'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['lastname'] : '' ?>" /><br>
 		<label for="email">Email : </label><br>
         <input class="form-control" type="email" name="email" id="email" value="<?= isset($user) ? $user['email'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['email'] : '' ?>" /><br>
+		<label for="address">Adresse : </label><br>
+        <input class="form-control" type="text" name="address" id="address" value="<?= isset($user) ? $user['address'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['address'] : '' ?>" /><br>
         <label for="password">Mot de passe : </label><br>
-        <input class="form-control" type="password" name="password" id="password" value="<?= isset($user) ? $user['password'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['password'] : '' ?>" /><br>
+        <input class="form-control" type="password" name="password" id="password" /><br>
         <label for="is_admin">Status admin :</label><br>
 		<select class="form-control" name="is_admin" id="is_admin" size="2">
-			<option value="0">0</option>
-			<option value="1">1</option>
+			<option value="1" <?php if (isset($user['is_admin'])): ?> selected="selected" <?php endif;?>>Oui</option>
+			<option value="0" <?php if (isset($user['is_admin'])): ?> selected="selected" <?php endif;?>>Non</option>
 		</select><br>	
 		<input class="btn btn-lg btn-success mt-2" name="save" type="submit" value="Enregistrer" />
 	</form>

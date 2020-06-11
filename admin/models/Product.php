@@ -123,8 +123,7 @@ function insertProductsCategoriesLinks($id, $categoriesIds){
 		$queryValues["category_id_$key"] = intval($categoryId);	
 	}
 	$query = $db->prepare($queryString);
-	return $query->execute($queryValues);
-	
+	return $query->execute($queryValues);	
 }
 
 

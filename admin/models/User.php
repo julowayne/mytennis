@@ -22,13 +22,14 @@ function addUser($informations)
 {
 	$db = dbConnect();
 	
-	$query = $db->prepare("INSERT INTO users (firstname, lastname, email, password, is_admin) VALUES(:firstname, :lastname, :email, :password, :is_admin)");
+	$query = $db->prepare("INSERT INTO users (firstname, lastname, email, password, is_admin, address) VALUES(:firstname, :lastname, :email, :password, :is_admin, :address)");
 	$result = $query->execute([
         'firstname' => $informations['firstname'],
         'lastname' => $informations['lastname'],
 		'email' => $informations['email'],
 		'password' => $informations['password'],
-        'is_admin' => $informations['is_admin'],
+		'is_admin' => $informations['is_admin'],
+		'address' => $informations['address'],
 	]);
 
 /* 	if($result && isset($_FILES['image']['tmp_name'])){
@@ -53,15 +54,22 @@ function addUser($informations)
 function updateUser($id, $informations){
 	$db = dbConnect();
 
-	$query = $db->prepare("UPDATE users SET firstname = ?, lastname = ?, email = ?, password = ?, is_admin = ? WHERE id = ?");
+	$query = $db->prepare("UPDATE users SET firstname = ?, lastname = ?, email = ?, is_admin = ?, address = ? WHERE id = ?");
 	$result = $query->execute([
         $informations['firstname'],
         $informations['lastname'],
         $informations['email'],
-        $informations['password'],
-        $informations['is_admin'],
+		$informations['is_admin'],
+		$informations['address'],
 		$id,
 	]);
+	if(!empty($informations['password'])){
+		$query = $db->prepare("UPDATE users SET password = ? WHERE id = ?");
+		$query = $query->execute([
+			hash('md5', $informations['password']),
+			$id,
+		]);
+	}
 	return $result;
 }
 function deleteUser($id)
