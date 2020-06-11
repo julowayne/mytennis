@@ -9,11 +9,11 @@
 <body>
     <?php require ('partials/header.php'); ?>
         <div class="product-container">
-            <img src="./admin/assets/images/products/1.png" alt="">
+            <img src="./admin/assets/images/products/<?= $product['image'] ?>" alt="">
             <div id="description">
-                <h3>Raquette Wilson Clash 100</h3>
+                <h3><?= $product['name'] ?></h3>
                 <p>
-                La raquette Wilson Clash 100 apporte des sensations de jeux inédites : souplesse, stabilité et puissance !
+                <?= $product['short_description'] ?>
                 </p>
                 <div id="stats">
                     Caractéristiques :
@@ -22,7 +22,7 @@
                         <li>Vendue cordée</li>
                 </div>
                 <div id="price">
-                    170€
+                <?= $product['price'] ?>€
                 </div>
                 <button type="submit">Ajouter au panier</button>
             </div>

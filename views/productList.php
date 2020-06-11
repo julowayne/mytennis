@@ -38,10 +38,10 @@
     </div>
         <div class="products-container">
             <?php foreach($productsByCategories as $productsByCategory): ?>
-            <a class="card">
+            <a class="card" href="index.php?p=products&action=raquette&id=<?=$productsByCategory['id'] ?>">
                 <div class="product-head">
-                    <?= $productsByCategory['name'] ?>
-                    <?= $productsByCategory['price']?> €
+                  <span><?= $productsByCategory['name'] ?></span>
+                  <span><?= $productsByCategory['price'] ?>€</span>    
                 </div>
                 <div>
                     <img src="admin/assets/images/products/<?= $productsByCategory['image']; ?>" alt="<?= $productsByCategory['name']; ?>">

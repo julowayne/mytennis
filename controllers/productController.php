@@ -8,6 +8,9 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'raquette' :
+			$product = getProduct($_GET['id']);
+			/* var_dump($products);
+			die(); */
 			require('views/product.php'); 
 			break;
 		case 'password' :

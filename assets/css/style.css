@@ -330,7 +330,7 @@ a:hover {
   max-height: 75vh;
   background-color: rgba(117, 190, 218, 0.1);
   border: 1px solid white;
-  margin: 2em auto;
+  margin: 3em auto;
   padding: 2em;
 }
 #product-list .filters input[type=checkbox] {
@@ -369,11 +369,16 @@ a:hover {
   cursor: pointer;
 }
 #product-list .products-container .product-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
   float: right;
   background-color: white;
   color: black;
   width: 300px;
-  height: 4vh;
+  height: 50px;
   margin-bottom: 0.1rem;
   box-shadow: 1px 1px black;
 }
@@ -412,7 +417,7 @@ a:hover {
   border: 1px solid white;
   background-color: rgba(117, 190, 218, 0.1);
   width: 600px;
-  height: 45vh;
+  height: 53vh;
   padding: 2em;
 }
 .product-container #description div {
@@ -439,7 +444,7 @@ a:hover {
   font-size: 100px;
 }
 .product-container button {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   border: 0;
   width: 100%;
   outline: none;
