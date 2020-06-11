@@ -17,16 +17,16 @@ function getProduct($id){
 
     return $query->fetch();
 }
-function getProductByCategories($productId){
+function getProductByCategories($categoryId){
 	$db = dbConnect();
 	$query = $db->prepare('
 	SELECT p. *
 	FROM products p
 	INNER JOIN products_categories pc ON p.id = pc.product_id 
-	WHERE pc.category_id = 14'
+	WHERE pc.category_id = ?'
 	);
 	$productsByCategories = $query->execute([
-		$productId
+		$categoryId
 	]);
 	return $query->fetchAll();
 }

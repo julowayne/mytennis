@@ -1,6 +1,5 @@
 <?php 
 
-require('models/Category.php');
 require('models/Order.php');
 require('models/Product.php');
 require('models/User.php');
@@ -8,26 +7,15 @@ require('models/User.php');
 
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
-		case 'rackets' :
-			require('views/racketsCategory.php'); 
+		case 'menu' :
+			/* $categories = getCategories(); */
+			$childCategories = getChildCategories();
+			require('views/category.php'); 
 			break;
-		case 'login' :
-			break;
-		case 'password' :
-			break;
-		case 'disconnected' :
-			break;
-		case 'new' :
-			$users = getAllUsers();
-			$view = 'views/userForm.php';
-			$pageTitle = "Ajout d'un utilisateur";
-			break;
-		case 'add' :
-			break;
-		case 'edit' :
-				break;
-		case 'delete' :
-			break;		
+		case 'list' :
+			$productsByCategories = getProductByCategories($_GET['id']);
+			require('views/productList.php');  
+			break;	
         default :
 		header('Location:index.php?controller=users&action=list');
 	}

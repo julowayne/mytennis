@@ -410,21 +410,21 @@ a {
     border: 1px solid white;
     background-color: rgba(117, 190, 218, 0.1);
     width: 600px;
-    height: 55vh;  
+    height: 45vh;  
     padding: 2em;
     div {
       display: inline-block;
     }
     h3 {
       margin-top: 0;
-      font-size: 30px;
+      font-size: 20px;
     }
     p {
-      font-size: 30px;
+      font-size: 25px;
     }
     #stats {
-      margin-top: 3rem;
-      font-size: 30px;
+      margin-top: 0.5rem;
+      font-size: 20px;
       li {
         list-style-type: none;
         margin: 0;
@@ -432,8 +432,25 @@ a {
       }
     }
     #price {
-      margin-left: 40px;
+      margin-left: 80px;
       font-size: 100px;
     }
    }
+   button {
+    margin-top: 20px;
+    border:0;
+    width: 100%;
+    outline:none;
+    border-radius:2px;
+    padding:9px 0;
+    font-size:2rem;
+    letter-spacing:.1em;
+    cursor: pointer;
+    background:white;
+    color:black;
+    &:hover, &:focus {
+      background:orange;
+      color:white
+    }
+  }
  }

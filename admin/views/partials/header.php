@@ -2,7 +2,7 @@
 <header>
     <nav>
         <div id="logo">
-        <a href="index.php"><img src="../assets/images/ball2.png" alt="logo Mytennis"></a>
+        <a href="index.php?controller=users&action=list"><img src="../assets/images/ball2.png" alt="logo Mytennis"></a>
         </div>
             <div id="categories">
                 <div class="dropdown">

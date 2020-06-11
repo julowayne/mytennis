@@ -1,6 +1,5 @@
 <?php 
 
-require('models/Category.php');
 require('models/Order.php');
 require('models/Product.php');
 require('models/User.php');
@@ -8,11 +7,6 @@ require('models/User.php');
 
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
-        case 'raquette-adultes' :
-			/* $products = getAllProducts(); */
-			$productsByCategories = getProductByCategories($productId);
-            require('views/racketList.php');  
-			break;
 		case 'raquette' :
 			require('views/product.php'); 
 			break;

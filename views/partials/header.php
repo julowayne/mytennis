@@ -1,28 +1,21 @@
 <header>
     <nav>
         <div id="logo">
-        <a href="http://localhost/back/mytennis/index.php"><img src="./assets/images/ball2.png" alt="logo Mytennis"></a>
+        <a href="index.php"><img src="./assets/images/ball2.png" alt="logo Mytennis"></a>
         </div>
             <div id="categories">
+                <?php foreach($categories as $category): ?>
                 <div class="dropdown">
-                    <a class="dropbtn">Tenues</a>
+                    <a class="dropbtn" href="index.php?p=categories&action=menu&id=<?=$category['id']?>"><?=$category['name']?></a>
                     <div class="dropdown-content">
-                        <a href="#">Maillots Femme</a>
-                        <a href="#">Maillots Homme</a>
-                        <a href="#">Short Femme</a>
-                        <a href="#">Short Homme</a>
+                    <?php foreach($childCategories as $childCategory): ?>
+                       <?php if($childCategory['parent_id'] == $category['id']): ?>
+                        <a href="index.php?p=categories&action=menu&id=<?=$childCategory['parent_id']?>"><?=$childCategory['name']?></a>
+                       <?php endif; ?>
+                    <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <a class="dropbtn">Balles</a>
-                </div>
-                <div class="dropdown">
-                    <a class="dropbtn" href="index.php?p=categories&action=rackets">Raquettes</a>
-                    <div class="dropdown-content">
-                        <a href="#">Adultes</a>
-                        <a href="#">Junior</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div>
                 <a href=""><img src="./assets/images/search2.png" alt=""></a>

@@ -6,7 +6,9 @@ if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = array();
 }
 require ('helpers.php');
-
+require('models/Category.php');
+$categories = getCategories();
+$childCategories = getChildCategories();
 if(isset($_GET['p'])):
     switch ($_GET['p']):
         case 'users' :

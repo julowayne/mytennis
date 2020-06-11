@@ -9,22 +9,23 @@
 <body>
     <?php require ('partials/header.php'); ?>
         <div class="product-container">
-        <img src="./admin/assets/images/products/1.png" alt="">
-        <div id="description">
-            <h3>Raquette Wilson Clash 100</h3>
-            <p>
-            La raquette Wilson Clash 100 apporte des sensations de jeux inédites : souplesse, stabilité et puissance !
-            </p>
-            <div id="stats">
-                Caractéristiques :
-                    <li>Poids: 295gr</li>
-                    <li>Equilibre: 310mm</li>
-                    <li>Vendue cordée</li>
+            <img src="./admin/assets/images/products/1.png" alt="">
+            <div id="description">
+                <h3>Raquette Wilson Clash 100</h3>
+                <p>
+                La raquette Wilson Clash 100 apporte des sensations de jeux inédites : souplesse, stabilité et puissance !
+                </p>
+                <div id="stats">
+                    Caractéristiques :
+                        <li>Poids: 295gr</li>
+                        <li>Equilibre: 310mm</li>
+                        <li>Vendue cordée</li>
+                </div>
+                <div id="price">
+                    170€
+                </div>
+                <button type="submit">Ajouter au panier</button>
             </div>
-            <div id="price">
-                170€
-            </div>
-        </div>
         </div>
     <?php require ('partials/footer.php'); ?>
 </body>

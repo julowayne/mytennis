@@ -1,7 +1,6 @@
 <?php
 session_start();
 require ('../helpers.php');
-
 if(isset($_GET['controller'])){
 	switch ($_GET['controller']){
 		case 'users' :
