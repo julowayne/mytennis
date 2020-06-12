@@ -1,4 +1,18 @@
 <?php 
+/* function modifyUserInformation($id, $informations){
+
+    $db = dbConnect();
+
+	$query = $db->prepare("UPDATE users SET firstname = ?, lastname = ?, email = ?, address = ? WHERE id = ?");
+	$result = $query->execute([
+        $informations['firstname'],
+        $informations['lastname'],
+        $informations['email'],
+		$informations['address'],
+		$id,
+	]);
+    return $result;
+} */
 
 function getUser($id){
 	$db = dbConnect();

@@ -37,7 +37,7 @@ if(isset($_GET['p'])):
 else:
     require 'controllers/indexController.php';
 endif; 
-/* require('admin/views/admin.php'); */
+require('views/front.php');
 if(isset($_SESSION['messages'])){
 	unset($_SESSION['messages']);	
 }

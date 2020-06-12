@@ -9,11 +9,13 @@ if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'menu' :
 			$childCategories = getChildCategories();
-			require('views/category.php'); 
+			$view = 'views/category.php';
+			$pageTitle = "Catégories"; 
 			break;
 		case 'list' :
 			$productsByCategories = getProductByCategories($_GET['id']);
-			require('views/productList.php');  
+			$view = 'views/productList.php';
+			$pageTitle = "Liste des produits"; 
 			break;	
         default :
 		header('Location:index.php?controller=users&action=list');

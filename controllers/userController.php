@@ -8,7 +8,8 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'form':
-			require('views/form.php'); 
+			$view = 'views/form.php';
+			$pageTitle = "Formulaire d'inscription";
 			break;
 		case 'signup' :
 			if(!empty($_POST)){
@@ -74,7 +75,8 @@ if(isset($_GET['action'])){
 			}
 			break;
 		case 'password' :
-			require('views/resetpassword.php');
+			$view = 'views/resetpassword.php';
+			$pageTitle = "Réinitialisation du mot de passe";
 			break;
 		case 'disconnected' :
 			if(isset($_SESSION['user'])){
@@ -93,7 +95,8 @@ if(isset($_GET['action'])){
 					header('Location:index.php?p=users&action=form');
 					exit;
 				}
-			require('views/userProfil.php');
+			$view = 'views/userProfil.php';
+			$pageTitle = "Profil";
 			break;	
         default :
 		header('Location:index.php');

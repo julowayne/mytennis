@@ -16,3 +16,21 @@ function change_tab(name){
         document.search-theme-form.action == "/LOGIN";
     }
 } */
+
+/* Ajax pr actualiser info profil front */
+/* const modifyUserInformations = async () => {    
+
+    const response = await fetch('./index.php?p=users&action=edit', {
+        method: 'POST', 
+        headers: {"Content-Type" : "application/json; charset=UTF-8"
+    }, 
+        body: JSON.stringify({
+            firstname : firstname,
+            lastname : lastname,
+            address : address,
+            email : email
+
+    })})
+    const json = await response.json()
+    return result  
+} */

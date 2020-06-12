@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mytennis</title>
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body>
-<?php require ('partials/header.php'); ?>
-
 <div class="container">
     <?php if(isset($_SESSION['messages'])): ?>
         <div>
@@ -30,6 +19,3 @@
         <p>Les dernières informations sur le monde du tennis. Nouvelle technologie de raquette en vue? </p>
     </div>
 </div>
-<?php require ('partials/footer.php'); ?>
-</body>
-</html>

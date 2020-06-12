@@ -9,9 +9,8 @@ if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'raquette' :
 			$product = getProduct($_GET['id']);
-			/* var_dump($products);
-			die(); */
-			require('views/product.php'); 
+			$view = 'views/product.php';
+			$pageTitle = "Liste des raquettes";  
 			break;
 		case 'password' :
 			break;
