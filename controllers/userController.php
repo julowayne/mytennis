@@ -69,11 +69,11 @@ if(isset($_GET['action'])){
 			require('views/resetpassword.php');
 			break;
 		case 'disconnected' :
-			/*demander a max lundi ou mardi*/
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
 				$_SESSION['messages'][] = 'Vous êtes déconnecté de Mytennis';
 				header('location:index.php');
+				exit;
 			}
 			break;
 		case 'edit' :
