@@ -1,2 +1,3 @@
-<?php require('partials/header.php'); ?>
+<?php require('../views/partials/header.php'); ?>
 <?php require('partials/menu.php'); ?>
+<?php require('../views/partials/footer.php'); ?>

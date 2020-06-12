@@ -1,6 +1,9 @@
 <?php 
 
 session_start();
+if(isset($_SESSION['viewAdmin'])){
+    unset($_SESSION['viewAdmin']);
+}
 /* Print_r ($_SESSION); */
 
 if(!isset($_SESSION['cart'])){
@@ -34,7 +37,7 @@ if(isset($_GET['p'])):
 else:
     require 'controllers/indexController.php';
 endif; 
-
+/* require('admin/views/admin.php'); */
 if(isset($_SESSION['messages'])){
 	unset($_SESSION['messages']);	
 }

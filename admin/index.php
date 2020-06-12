@@ -1,6 +1,10 @@
 <?php
 session_start();
+$_SESSION['viewAdmin'] = true;
 require ('../helpers.php');
+require('../models/Category.php');
+$categories = getCategories();
+$childCategories = getChildCategories();
 if(isset($_GET['controller'])){
 	switch ($_GET['controller']){
 		case 'users' :

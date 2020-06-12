@@ -1,7 +1,7 @@
 <header>
     <nav>
         <div id="logo">
-        <a href="index.php"><img src="./assets/images/ball2.png" alt="logo Mytennis"></a>
+        <a href="index.php"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/ball2.png' : './assets/images/ball2.png' ?>" alt="logo Mytennis"></a>
         </div>
             <div id="categories">
                 <?php foreach($categories as $category): ?>
@@ -18,10 +18,10 @@
                 <?php endforeach; ?>
             </div>
             <div>
-                <a href=""><img src="./assets/images/search2.png" alt=""></a>
+                <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/search2.png' : './assets/images/search2.png' ?>" alt="logo recherche"></a>
             </div>
             <div>
-                <a href=""><img src="./assets/images/cart2.png" alt=""></a>
+                <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
             </div> 
             <div id="account">
                 <div class="dropdown">
