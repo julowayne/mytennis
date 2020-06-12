@@ -31,7 +31,7 @@ if(isset($_GET['action'])){
 			else{
 				$result = addCategory($_POST);
 				
-				$_SESSION['messages'][] = $result  ? '<div class="alert alert-success"> Catégorie enregistré ! </div>' : '<div class="alert alert-danger"> Erreur lors de l enregistrement de la catégorie... :(</div>';
+				$_SESSION['messages'] = $result ? ['message' => 'Nouvelle catégorie enregistrée', 'type' => 'success'] : ['message' => 'Erreur lors de l enregistrement de la catégorie', 'type' => 'danger'];
 				
 				header('Location:index.php?controller=categories&action=list');
 				exit;
@@ -52,7 +52,7 @@ if(isset($_GET['action'])){
 		
 				else {
 					$result = updateCategory($_GET['id'], $_POST);
-					$_SESSION['messages'][] = $result ? '<div class="alert alert-success"> Catégorie mise à jour ! </div>' : '<div class="alert alert-danger"> Erreur lors de la mise à jour de la categorie... :(</div>';
+					$_SESSION['messages'] = $result ? ['message' => 'Catégorie mise à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise à jour de la catégorie', 'type' => 'danger'];
 					header('Location:index.php?controller=categories&action=list');
 					exit;
 				}
@@ -83,7 +83,7 @@ if(isset($_GET['action'])){
 				header('Location:index.php?controller=categories&action=list');
 				exit;
 			}
-			$_SESSION['messages'][] = $result ? '<div class="alert alert-success"> Catégorie supprimé ! </div>' : '<div class="alert alert-danger"> Erreur lors de la suppression de la catégorie... :(</div>';
+			$_SESSION['messages'] = $result ? ['message' => 'Catégorie supprimé', 'type' => 'success'] : ['message' => 'Erreur lors de la suppression de la catégorie', 'type' => 'danger'];
 		
 			header('Location:index.php?controller=categories&action=list');
 			exit;

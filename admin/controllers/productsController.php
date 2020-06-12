@@ -32,8 +32,7 @@ if(isset($_GET['action'])){
 			}
 			else{
 				$resultAdd = addProduct($_POST);
-				$_SESSION['messages'][] = $resultAdd ? '<div class="alert alert-success"> Produit enregistré ! </div>' : '<div class="alert alert-danger"> Erreur lors de l enregistrement du produit... :(</div>';
-				
+				$_SESSION['messages'] = $resultAdd ? ['message' => 'produit enregistré', 'type' => 'success'] : ['message' => 'Erreur lors de l enregistrement du produit', 'type' => 'danger'];
 				header('Location:index.php?controller=products&action=list');
 				exit;
 			}
@@ -53,7 +52,7 @@ if(isset($_GET['action'])){
 		
 				else {
 					$result = updateProduct($_GET['id'], $_POST);
-					$_SESSION['messages'][] = $result ? '<div class="alert alert-success"> Produit mis à jour ! </div>' : '<div class="alert alert-danger"> Erreur lors de la mise à jour du produit... :(</div>';
+					$_SESSION['messages'] = $resultAdd ? ['message' => 'produit mis à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise a jour du produit', 'type' => 'danger'];
 					header('Location:index.php?controller=products&action=list');
 					exit;
 				}
@@ -85,7 +84,7 @@ if(isset($_GET['action'])){
 				header('Location:index.php?controller=products&action=list');
 				exit;
 			}
-			$_SESSION['messages'][] = $result ? '<div class="alert alert-success"> Produit supprimé ! </div>' : '<div class="alert alert-danger"> Erreur lors de la suppression du produit... :(</div>';
+			$_SESSION['messages'] = $result ? ['message' => 'produit enregistré', 'type' => 'success'] : ['message' => 'Erreur lors de l enregistrement du produit', 'type' => 'danger'];
 		
 			header('Location:index.php?controller=products&action=list');
 			exit;

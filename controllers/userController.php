@@ -50,7 +50,8 @@ if(isset($_GET['action'])){
 								'firstname' => $user['firstname'],
 								'lastname' => $user['lastname'],
 								'email' => $user['email'],
-								'is_admin' => $user['is_admin']
+								'is_admin' => $user['is_admin'],
+								'id' => $user['id'],
 						];
 						$_SESSION['messages'][] = 'Vous êtes connecté sur Mytennis';
 						header('location:index.php?p=users&action=form');
@@ -72,7 +73,7 @@ if(isset($_GET['action'])){
      		header('location:index.php');
 			break;
 		case 'edit' :
-		/* 	if(!isset($_SESSION['old_inputs'])){
+			if(!isset($_SESSION['old_inputs'])){
 				if (isset($_GET['id'])){
 					$user = getUser($_GET['id']);
 				}
@@ -80,7 +81,7 @@ if(isset($_GET['action'])){
 					header('Location:index.php?p=users&action=form');
 					exit;
 				}
-			} */
+			}
 			require('views/userProfil.php');
 			break;	
         default :

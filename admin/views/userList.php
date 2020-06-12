@@ -2,9 +2,7 @@
 <h3>Liste des utilisateurs <a class="btn btn-primary btn-sm" href="index.php?controller=users&action=new" type="button"> Ajouter un utilisateur</a></h3>
 	<?php if(isset($_SESSION['messages'])): ?>
 		<h2>
-			<?php foreach($_SESSION['messages'] as $message): ?>
-				<?= $message ?><br>
-			<?php endforeach; ?>
+            <div class="alert alert-<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></div>
 		</h2>
 	<?php endif; ?>
 </div>

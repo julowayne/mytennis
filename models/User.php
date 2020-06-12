@@ -9,7 +9,7 @@ function getAllUsers()
     return $users;
 }
 
-function getUser($id){
+/* function getUser($id){
 	$db = dbConnect();
 
 	$query = $db->prepare('SELECT * FROM users WHERE id = ?');
@@ -17,7 +17,7 @@ function getUser($id){
 
 
     return $query->fetch();
-}
+} */
 function add($informations){
 
     $db = dbConnect();

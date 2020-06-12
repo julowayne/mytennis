@@ -31,7 +31,7 @@ if(isset($_GET['action'])){
 			else{
 				$resultAdd = addUser($_POST);
 				
-				$_SESSION['messages'][] = $resultAdd ? '<div class="alert alert-success"> Utilisateur enregistré ! </div>' : '<div class="alert alert-danger"> Erreur lors de l enregistrement de l utilisateur... :(</div>';
+				$_SESSION['messages'] = $resultAdd ? ['message' => 'Utilisateur supprimé', 'type' => 'success'] : ['message' => 'Erreur lors de la suppression de l\' utilisateur', 'type' => 'danger'];
 				
 				header('Location:index.php?controller=users&action=list');
 				exit;
@@ -54,7 +54,7 @@ if(isset($_GET['action'])){
 							$_POST['is_admin'] = 0;
 						}
 						$result = updateUser($_GET['id'], $_POST);
-						$_SESSION['messages'][] = $result ? '<div class="alert alert-success"> Utilisateur mis à jour ! </div>' : '<div class="alert alert-danger"> Erreur lors de la mise à jour de l utilisateur... :(</div>';
+						$_SESSION['messages'] = $result ? ['message' => 'Utilisateur mis à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise à jour de l\' utilisateur', 'type' => 'danger'];
 						header('Location:index.php?controller=users&action=list');
 						exit;
 					}
@@ -86,7 +86,7 @@ if(isset($_GET['action'])){
 				header('Location:index.php?controller=users&action=list');
 				exit;
 			}
-			$_SESSION['messages'][] = $result ? '<div class="alert alert-success"> Utilisateur supprimé ! </div>' : '<div class="alert alert-danger"> Erreur lors de la suppression de l utilisateur... :(</div>';
+			$_SESSION['messages'] = $result ? ['message' => 'Utilisateur supprimé', 'type' => 'success'] : ['message' => 'Erreur lors de la suppression de l\'utilisateur', 'type' => 'danger'];
 		
 			header('Location:index.php?controller=users&action=list');
 			exit;

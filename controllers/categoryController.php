@@ -8,7 +8,6 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'menu' :
-			/* $categories = getCategories(); */
 			$childCategories = getChildCategories();
 			require('views/category.php'); 
 			break;
