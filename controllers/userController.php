@@ -50,7 +50,7 @@ if(isset($_GET['action'])){
 								'firstname' => $user['firstname'],
 								'lastname' => $user['lastname'],
 								'email' => $user['email'],
-								'is_admin' => $user['is_admin'],
+								'address' => $user['address'],
 								'id' => $user['id'],
 						];
 						$_SESSION['messages'][] = 'Vous êtes connecté sur Mytennis';
@@ -69,23 +69,26 @@ if(isset($_GET['action'])){
 			require('views/resetpassword.php');
 			break;
 		case 'disconnected' :
-			unset($_SESSION['user']);
-     		header('location:index.php');
+			/*demander a max lundi ou mardi*/
+			if(isset($_SESSION['user'])){
+				unset($_SESSION['user']);
+				$_SESSION['messages'][] = 'Vous êtes déconnecté de Mytennis';
+				header('location:index.php');
+			}
 			break;
 		case 'edit' :
 			if(!isset($_SESSION['old_inputs'])){
-				if (isset($_GET['id'])){
 					$user = getUser($_GET['id']);
 				}
 				else {
+					$result = updateUser($_GET['id'], $_POST);
 					header('Location:index.php?p=users&action=form');
 					exit;
 				}
-			}
 			require('views/userProfil.php');
 			break;	
         default :
-		header('Location:index.php?controller=users&action=list');
+		header('Location:index.php');
 	}
 }
 else{

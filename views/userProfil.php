@@ -14,6 +14,13 @@
                 Profil
             </div>
         </div>
+        <?php if(isset($_SESSION['messages'])): ?>
+            <div>
+                <?php foreach($_SESSION['messages'] as $message): ?>
+                    <?= $message ?><br>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>    
         <div class="signup-content">
             <method="post" action="index.php?p=users&action=<?= isset($user) || (isset($_SESSION['old_inputs']) && $_GET['action'] == 'edit') ? 'edit&id='.$_GET['id'] : 'form' ?>" method="post" enctype="multipart/form-data">
                 <label for="firstname">Prénom</label>
@@ -25,7 +32,7 @@
                 <label for="email">Email</label>
                 <input id="email" type="email" name="email" value="<?= isset($user) ? $user['email'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['email'] : '' ?>" required />
                 <label for="password">Mot de passe</label>
-                <input id="password" type="password" name="password" required>
+                <input id="password" type="password" name="password">
                 <button type="submit">Modifier</button>
             </form>
         </div>

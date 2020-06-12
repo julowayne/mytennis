@@ -1,18 +1,13 @@
 <?php 
 
 session_start();
-echo session_id();
-Print_r ($_SESSION);
+/* Print_r ($_SESSION); */
 
 if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = array();
 }
 require ('helpers.php');
 require('models/Category.php');
-require('models/Index.php');
-$user = getUser($_GET['id']);
-/* var_dump($user);
-die(); */
 $categories = getCategories();
 $childCategories = getChildCategories();
 if(isset($_GET['p'])):

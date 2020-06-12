@@ -1,15 +1,6 @@
 <?php 
-function getAllUsers()
-{
-    $db = dbConnect();
 
-    $query = $db->query('SELECT * FROM users');
-	$users =  $query->fetchAll();
-
-    return $users;
-}
-
-/* function getUser($id){
+function getUser($id){
 	$db = dbConnect();
 
 	$query = $db->prepare('SELECT * FROM users WHERE id = ?');
@@ -17,7 +8,7 @@ function getAllUsers()
 
 
     return $query->fetch();
-} */
+}
 function add($informations){
 
     $db = dbConnect();
@@ -33,6 +24,26 @@ function add($informations){
         ]
     );
     return $user;
+}
+function updateUser($id, $informations){
+	$db = dbConnect();
+
+	$query = $db->prepare("UPDATE users SET firstname = ?, lastname = ?, email = ?, address = ? WHERE id = ?");
+	$result = $query->execute([
+        $informations['firstname'],
+        $informations['lastname'],
+        $informations['email'],
+		$informations['address'],
+		$id,
+	]);
+	if(!empty($informations['password'])){
+		$query = $db->prepare("UPDATE users SET password = ? WHERE id = ?");
+		$query = $query->execute([
+			hash('md5', $informations['password']),
+			$id,
+		]);
+	}
+	return $result;
 }
 
 function checkUser(){
