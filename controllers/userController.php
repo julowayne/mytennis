@@ -22,13 +22,21 @@ if(isset($_GET['action'])){
 					$emailExists = emailCheck();
 				  if(!$emailExists){
 					$user = add($_POST);
+					$user = checkUser();
+					$_SESSION['user'] = [
+						'firstname' => $user['firstname'],
+						'lastname' => $user['lastname'],
+						'email' => $user['email'],
+						'address' => $user['address'],
+						'id' => $user['id'],
+					];
 					$_SESSION['messages'][] = 'Vous êtes inscrit sur Mytennis';
-					header('location:index.php?p=users&action=form');
+					header('location:index.php');
 					exit;
 				  }
 				  else{
 					$_SESSION['messages'][] = 'L adresse email indiquée est déjà utilisée';
-					header('location:index.php?p=users&action=form');
+					header('location:index.php');
 					exit;
 				  }
 				}
@@ -54,7 +62,7 @@ if(isset($_GET['action'])){
 								'id' => $user['id'],
 						];
 						$_SESSION['messages'][] = 'Vous êtes connecté sur Mytennis';
-						header('location:index.php?p=users&action=form');
+						header('location:index.php');
 						exit;
 					}
 					else {

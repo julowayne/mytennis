@@ -15,19 +15,14 @@
                 </ul>
                 <div>
                     <div class="contenu_onglets">
-                    <?php if(isset($_SESSION['messages'])): ?>
-                        <div>
-                            <?php foreach($_SESSION['messages'] as $message): ?>
-                                <?= $message ?><br>
-                            <?php endforeach; ?>
-                        </div>
-                        <?php endif; ?> 
                         <div class="tab-content signup-content" id="tab-content-inscription">
                             <form action="index.php?p=users&action=signup" method="post">
                                 <label for="firstname">Prénom *</label>
                                 <input type="text" name="firstname">
                                 <label for="lastname">Nom *</label>
                                 <input type="text" name="lastname">
+                                <label for="address">Adresse *</label>
+                                <input type="text" name="address">
                                 <label for="email">Email *</label>
                                 <input id="email" type="email" name="email" required>
                                 <label for="password">Mot de passe *</label>

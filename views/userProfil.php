@@ -31,7 +31,7 @@
                 <input type="text" name="address" id="address" value="<?= isset($user) ? $user['address'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['address'] : '' ?>" />
                 <label for="email">Email</label>
                 <input id="email" type="email" name="email" value="<?= isset($user) ? $user['email'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['email'] : '' ?>" required />
-                <label for="password">Mot de passe</label>
+                <label for="password">Changer mon mot de passe</label>
                 <input id="password" type="password" name="password">
                 <button type="submit">Modifier</button>
             </form>
