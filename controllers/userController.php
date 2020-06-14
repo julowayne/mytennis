@@ -31,15 +31,17 @@ if(isset($_GET['action'])){
 						'address' => $user['address'],
 						'id' => $user['id'],
 					];
-					$_SESSION['messages'][] = 'Vous êtes inscrit sur Mytennis';
+					/* $_SESSION['messages'][] = 'Vous êtes inscrit sur Mytennis'; */
+					$_SESSION['messages'] = $user ? ['message' => 'Vous êtes inscrit sur MyTennis', 'type' => 'success'] : ['message' => 'L adresse email indiquée est déjà utilisée', 'type' => 'danger'];
+
 					header('location:index.php');
 					exit;
 				  }
-				  else{
+				  /* else{
 					$_SESSION['messages'][] = 'L adresse email indiquée est déjà utilisée';
 					header('location:index.php');
 					exit;
-				  }
+				  } */
 				}
 			  }
 			break;
@@ -62,39 +64,44 @@ if(isset($_GET['action'])){
 								'address' => $user['address'],
 								'id' => $user['id'],
 						];
-						$_SESSION['messages'][] = 'Vous êtes connecté sur Mytennis';
+						/* $_SESSION['messages'][] = 'Vous êtes connecté sur Mytennis'; */
+						$_SESSION['messages'] = $user ? ['message' => 'Vous êtes connecté sur MyTennis!', 'type' => 'success'] : ['message' => 'Identifiants incorrects', 'type' => 'danger'];
+
 						header('location:index.php');
 						exit;
 					}
-					else {
+				/* 	else {
 						$_SESSION['messages'][] = 'Identifiants incorrects';
 						header('location:index.php?p=users&action=form');
 						exit;
-					}
+					} */
 				}
 			}
 			break;
 		case 'password' :
+			$result = updateUser($_GET['id'], $_POST);
+			$_SESSION['messages'] = $result ? ['message' => 'Informations mises à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise à jour des informations', 'type' => 'danger'];
+						header('Location:index.php?controller=users&action=list');
+						exit;
 			$view = 'views/resetpassword.php';
 			$pageTitle = "Réinitialisation du mot de passe";
 			break;
 		case 'disconnected' :
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
-				$_SESSION['messages'][] = 'Vous êtes déconnecté de Mytennis';
+				/* $_SESSION['messages'][] = 'Vous êtes déconnecté de Mytennis'; */
+				$_SESSION['messages'] = isset($_SESSION['user']) ? ['message' => 'Erreur lors de la déconnexion', 'type' => 'danger'] : ['message' => 'Vous êtes déconnecté de Mytennis', 'type' => 'success'];
 				header('location:index.php');
 				exit;
 			}
 			break;
 		case 'edit' :
-			if(!isset($_SESSION['old_inputs'])){
-					$user = getUser($_GET['id']);
-				}
-				else {
-					$result = updateUser($_GET['id'], $_POST);
-					header('Location:index.php?p=users&action=form');
-					exit;
-				}
+			/* if($result){
+				$profil = true;
+			}else {
+				$profil = false;
+			}
+			$profil = json_encode($profil); */
 			$view = 'views/userProfil.php';
 			$pageTitle = "Profil";
 			break;	

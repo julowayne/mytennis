@@ -29,9 +29,8 @@
                 <?php endif; ?>
                 <div class="dropdown">
                 <?php if (isset($_SESSION['user'])): ?>
-                    <a class="dropbtn" href="index.php?p=users&action=form"><?= $_SESSION['user']['firstname'] ?></a>
+                    <a class="dropbtn" href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>"><?= $_SESSION['user']['firstname'] ?></a>
                     <div class="dropdown-content">
-                            <a href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>">Profil</a>
                             <a href="index.php?p=users&action=disconnected">déconnexion</a>
                         <?php endif; ?>
                     </div>

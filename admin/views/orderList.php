@@ -1,4 +1,4 @@
-<div class="col justify-content-center bg-lightgray text-center">
+<div class="col bg-lightgray">
 <h3>Liste des commandes</h3>
 	<?php if(isset($_SESSION['messages'])): ?>
 		<h2>
@@ -7,8 +7,8 @@
 	<?php endif; ?>
 </div>
 
-<div class="col text-center text-light">
-	<table class="table-striped text-light col justify-content-center bg-lightgray text-center">
+<div class="col text-light">
+	<table class="table-striped text-light col  bg-lightgray">
     <thead>
         <tr>
             <th>#</th>

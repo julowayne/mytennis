@@ -7,17 +7,33 @@ function change_tab(name){
     document.getElementById(`tab-content-${name}`).style.display = 'block';
     tab_anc = name;
 }
-/* function chgAction( action_name )
-{
-    if( action_name=="signup" ) {
-        document.search-theme-form.action == "/SIGNUP";
-    }
-    else if( action_name=="login" ) {
-        document.search-theme-form.action == "/LOGIN";
-    }
-} */
+
 
 /* Ajax pr actualiser info profil front */
+
+/* const profilForm = document.getElementById('profil')
+
+profilForm.addEventListener('click', event => {
+    fetch(`index.php?p=users&action=edit&id=${id}`,{
+        method: "POST",
+        headers: {"Content-Type" : "application/json; charset=UTF-8"
+    }, 
+    body: JSON.stringify({
+        firstname : firstname,
+        lastname : lastname,
+        address : address,
+        email : email
+        })
+    })
+    .then(r => r.json())
+    .then ((data) => {
+        console.log(data)
+        const profilInput = document.querySelector('input')
+    })
+}) */
+
+
+
 /* const modifyUserInformations = async () => {    
 
     const response = await fetch('./index.php?p=users&action=edit', {

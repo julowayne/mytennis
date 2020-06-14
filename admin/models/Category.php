@@ -3,7 +3,7 @@ function getAllCategories()
 {
     $db = dbConnect();
 
-    $query = $db->query('SELECT * FROM categories');
+    $query = $db->query('SELECT * FROM categories WHERE parent_id IS NULL');
 	$categories =  $query->fetchAll();
 
     return $categories;

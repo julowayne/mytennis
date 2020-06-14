@@ -1,4 +1,4 @@
-<div class="col justify-content-center bg-lightgray text-center">
+<div class="col bg-lightgray">
 <h3>Liste des utilisateurs <a class="btn btn-primary btn-sm" href="index.php?controller=users&action=new" type="button"> Ajouter un utilisateur</a></h3>
 	<?php if(isset($_SESSION['messages'])): ?>
 		<h2>
@@ -6,8 +6,8 @@
 		</h2>
 	<?php endif; ?>
 </div>
-<div class="col text-center text-light">
-	<table class="table-striped col justify-content-center bg-lightgray text-center">
+<div class="col text-light">
+	<table class="table-striped col  bg-lightgray">
     <thead>
         <tr>
             <th>#</th>

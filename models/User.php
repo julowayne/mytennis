@@ -52,7 +52,7 @@ function updateUser($id, $informations){
 	]);
 	if(!empty($informations['password'])){
 		$query = $db->prepare("UPDATE users SET password = ? WHERE id = ?");
-		$query = $query->execute([
+		$result = $query->execute([
 			hash('md5', $informations['password']),
 			$id,
 		]);

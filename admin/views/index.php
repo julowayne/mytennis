@@ -1,3 +1,6 @@
-<?php require('../views/partials/header.php'); ?>
-<?php require('partials/menu.php'); ?>
-<?php require('../views/partials/footer.php'); ?>
+
+<div class="container">
+    <h2 class="first-article">
+        Bienvenue dans le back-office d'administration de MyTennis, ici vous pouvez modifier, ajouter ou supprimer le contenu que vous voulez !
+    </h2>
+</div>

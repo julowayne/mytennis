@@ -1,6 +1,6 @@
 body {
   background-image: url(../images/background.jpg);
-  background-size: cover;
+  background-attachment: fixed;
   font-family: "Roboto", sans-serif;
   color: white;
   min-height: 100vh;
@@ -55,16 +55,18 @@ a:hover {
   margin-left: 30px;
 }
 
-#account {
-  margin-left: 30px;
-}
 #account .dropbtn {
   justify-content: space-between;
   text-decoration: none;
+  margin-left: 30px;
   cursor: pointer;
   font-size: x-large;
   letter-spacing: 2px;
   color: white;
+}
+#account .dropbtn:hover {
+  text-decoration: none;
+  color: orange;
 }
 #account .dropdown {
   position: relative;
@@ -278,14 +280,25 @@ a:hover {
 .container {
   max-width: 800px;
   text-align: center;
-  border-radius: 4px;
   justify-content: center;
   margin: 0 auto;
 }
-.container #first-article, .container #second-article {
+.container h3 {
+  border: 1px solid white;
+  padding: 0.5rem;
+}
+.container h3 .success {
+  background-color: lightgreen;
+  color: green;
+}
+.container h3 .danger {
+  background-color: orangered;
+}
+.container .first-article, .container #second-article {
   border: 1px solid white;
   background-color: rgba(117, 190, 218, 0.1);
   max-width: 700px;
+  border-radius: 3px;
   height: 25vh;
   text-align: center;
   justify-content: center;
@@ -293,11 +306,11 @@ a:hover {
   margin: 30px auto;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
-.container #first-article h1, .container #second-article h1 {
+.container .first-article h1, .container #second-article h1 {
   margin: 0 0 0 auto;
   padding: 0;
 }
-.container #first-article p, .container #second-article p {
+.container .first-article p, .container #second-article p {
   font-size: 1.4rem;
 }
 
