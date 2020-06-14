@@ -6,10 +6,7 @@
         <?= $product['short_description'] ?>
         </p>
         <div id="stats">
-            Caractéristiques :
-                <li>Poids: 295gr</li>
-                <li>Equilibre: 310mm</li>
-                <li>Vendue cordée</li>
+                Quantité disponible : <br><?= $product['quantity'] ?>
         </div>
         <div id="price">
         <?= $product['price'] ?>€

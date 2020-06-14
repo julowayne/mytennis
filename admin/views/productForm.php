@@ -33,8 +33,8 @@
 		<label for="quantity">Quantité :</label><br>
 		<input class="form-control" type="text" name="quantity" id="quantity" value="<?= isset($product) ? $product['quantity'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['quantity'] : '' ?>" /><br>
 
-		<label for="short_description">Description :</label><br>
-		<textarea rows="3" cols="50" name="short_description" id="short_description"><?= isset($product) ? $product['short_description'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['short_description'] : '' ?></textarea><br>
+		<label for="short_description">Courte description (100 caractères maximum):</label><br>
+		<textarea rows="3" cols="50" maxlength="100" name="short_description" id="short_description"><?= isset($product) ? $product['short_description'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['short_description'] : '' ?></textarea><br>
 
 		<label for="image">image :</label>
 		<input class="form-control-file" type="file" name="image" id="image" /><br>

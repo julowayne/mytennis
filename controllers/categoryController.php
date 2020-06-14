@@ -9,7 +9,6 @@ if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'menu' :
 			$childCategories = getChildCategories();
-			$productsByPrice = search();
 			$view = 'views/category.php';
 			$pageTitle = "Catégories"; 
 			break;

@@ -52,7 +52,7 @@ if(isset($_GET['action'])){
 		
 				else {
 					$result = updateProduct($_GET['id'], $_POST);
-					$_SESSION['messages'] = $resultAdd ? ['message' => 'Produit mis à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise a jour du produit', 'type' => 'danger'];
+					$_SESSION['messages'] = $result ? ['message' => 'Produit mis à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise a jour du produit', 'type' => 'danger'];
 					header('Location:index.php?controller=products&action=list');
 					exit;
 				}

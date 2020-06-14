@@ -1,7 +1,7 @@
 <div class="category-container">
     <?php foreach($childCategories as $childCategory): ?>
         <?php if($childCategory['parent_id'] == $_GET['id']): ?>
-        <a class="rackets" href="index.php?p=categories&action=list&id=<?= $childCategory['parent_id'] ?>">
+                 <a class="rackets" href="index.php?p=categories&action=list&id=<?= $childCategory['parent_id'] ?>">
             <div>
             <?=  $childCategory['name'] ?>
             </div>
