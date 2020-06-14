@@ -16,3 +16,11 @@ function getChildCategories(){
     
     return $childCategories;
 }
+function search(){
+    $db = dbConnect();
+    $order = $_GET['order'] ? $_GET['order'] : 'ASC';
+    $query = $db->query('SELECT * FROM products ORDER BY price ' . $order);
+    $productsByPrice =  $query->fetchAll();
+    
+    return $productsByPrice;
+}

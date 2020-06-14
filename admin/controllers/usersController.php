@@ -58,8 +58,7 @@ if(isset($_GET['action'])){
 						header('Location:index.php?controller=users&action=list');
 						exit;
 					}
-			}	
-				else {
+			}else {
 					if(!isset($_SESSION['old_inputs'])){
 						if (isset($_GET['id'])){
                             $users = getAllUsers();

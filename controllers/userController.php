@@ -79,10 +79,6 @@ if(isset($_GET['action'])){
 			}
 			break;
 		case 'password' :
-			$result = updateUser($_GET['id'], $_POST);
-			$_SESSION['messages'] = $result ? ['message' => 'Informations mises à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise à jour des informations', 'type' => 'danger'];
-						header('Location:index.php?controller=users&action=list');
-						exit;
 			$view = 'views/resetpassword.php';
 			$pageTitle = "Réinitialisation du mot de passe";
 			break;
@@ -96,14 +92,40 @@ if(isset($_GET['action'])){
 			}
 			break;
 		case 'edit' :
-			/* if($result){
-				$profil = true;
+			if(!empty($_POST)){
+				if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['address'])){
+					if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['address'])){
+
+						$_SESSION['messages'][] = 'Tout les champs sauf le mot de passe sont obligatoires pour modifier vos informations !';
+					}
+						$_SESSION['old_inputs'] = $_POST;
+						header('Location:index.php?p=users&action=edit&id='.$_GET['id']);
+						exit;
+					}
+			
+					else {
+						$result = updateUser($_GET['id'], $_POST);
+						$_SESSION['messages'] = $result ? ['message' => 'Votre profil a été mis à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise à jour de l\' utilisateur', 'type' => 'danger'];
+						header('Location:index.php');
+						exit;
+					}
 			}else {
-				$profil = false;
-			}
-			$profil = json_encode($profil); */
-			$view = 'views/userProfil.php';
-			$pageTitle = "Profil";
+					if(!isset($_SESSION['old_inputs'])){
+						if (isset($_GET['id'])){
+							$user = getUser($_GET['id']);
+							if ($user == false){
+								header('Location:index.php');
+								exit;
+							}	
+						}
+						else {
+							header('Location:index.php');
+							exit;
+						}
+					}
+					$view = 'views/userProfil.php';
+					$pageTitle = "Profil";
+				}
 			break;	
         default :
 		header('Location:index.php');

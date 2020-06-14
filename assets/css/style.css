@@ -259,7 +259,7 @@ a:hover {
 .form #forgot a {
   margin-bottom: 1rem;
 }
-.form button {
+.form button, .form input[type=submit] {
   border: 0;
   width: 100%;
   outline: none;
@@ -271,7 +271,7 @@ a:hover {
   background: white;
   color: black;
 }
-.form button:hover, .form button:focus {
+.form button:hover, .form button:focus, .form input[type=submit]:hover, .form input[type=submit]:focus {
   background: orange;
   color: white;
 }
