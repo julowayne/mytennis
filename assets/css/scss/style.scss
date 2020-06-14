@@ -286,17 +286,17 @@ a {
   text-align: center;
   justify-content: center;
   margin: 0 auto;
-  h3 {
-    border: 1px solid white;
-    padding: 0.5rem;
       .success {
-        background-color: lightgreen;
-        color: green;
+        border: 1px solid white;
+        padding: 0.5rem;
+        background-color: orange;
+        color: white;
       }
       .danger {
+        border: 1px solid white;
+        padding: 0.5rem;
         background-color: orangered;
       }
-  }
   .first-article, #second-article {
     border: 1px solid white;
     background-color: rgba(117, 190, 218, 0.1);

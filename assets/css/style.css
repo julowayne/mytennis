@@ -283,15 +283,15 @@ a:hover {
   justify-content: center;
   margin: 0 auto;
 }
-.container h3 {
+.container .success {
   border: 1px solid white;
   padding: 0.5rem;
+  background-color: orange;
+  color: white;
 }
-.container h3 .success {
-  background-color: lightgreen;
-  color: green;
-}
-.container h3 .danger {
+.container .danger {
+  border: 1px solid white;
+  padding: 0.5rem;
   background-color: orangered;
 }
 .container .first-article, .container #second-article {

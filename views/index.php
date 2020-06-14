@@ -1,8 +1,6 @@
 <div class="container">
-<?php if(isset($_SESSION['messages'])): ?>
-		<h3>
-            <div class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></div>
-		</h3>
+<?php if(isset($_SESSION['messages'])): ?>	
+            <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
 	<?php endif; ?>
     <div class="first-article">
         <h1><a href="">Nouveautés</a></h1>
