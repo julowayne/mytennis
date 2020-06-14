@@ -31,7 +31,7 @@ if(isset($_GET['action'])){
 			else{
 				$resultAdd = addUser($_POST);
 				
-				$_SESSION['messages'] = $resultAdd ? ['message' => 'Utilisateur supprimé', 'type' => 'success'] : ['message' => 'Erreur lors de la suppression de l\' utilisateur', 'type' => 'danger'];
+				$_SESSION['messages'] = $resultAdd ? ['message' => 'Vous avez ajouté un utilisateur', 'type' => 'success'] : ['message' => 'Erreur lors de l\'ajout de l\' utilisateur', 'type' => 'danger'];
 				
 				header('Location:index.php?controller=users&action=list');
 				exit;

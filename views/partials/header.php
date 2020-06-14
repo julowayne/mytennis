@@ -24,14 +24,17 @@
                 <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
             </div> 
             <div id="account">
+            <?php if (!isset($_SESSION['user'])): ?>
+                <a class="dropbtn" href="index.php?p=users&action=form">Compte</a>
+                <?php endif; ?>
                 <div class="dropdown">
-                    <a class="dropbtn" href="index.php?p=users&action=form">Compte</a>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <a class="dropbtn" href="index.php?p=users&action=form"><?= $_SESSION['user']['firstname'] ?></a>
                     <div class="dropdown-content">
-                            <?php if (isset($_SESSION['user'])): ?>
-                                <a href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>">Profil</a>
-                                <a href="index.php?p=users&action=disconnected">déconnexion</a>
-                            <?php endif; ?>
-                        </div>
+                            <a href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>">Profil</a>
+                            <a href="index.php?p=users&action=disconnected">déconnexion</a>
+                        <?php endif; ?>
+                    </div>
                 </div>  
             </div> 
     </nav>

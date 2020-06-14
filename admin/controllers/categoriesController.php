@@ -31,7 +31,7 @@ if(isset($_GET['action'])){
 			else{
 				$result = addCategory($_POST);
 				
-				$_SESSION['messages'] = $result ? ['message' => 'Nouvelle catégorie enregistrée', 'type' => 'success'] : ['message' => 'Erreur lors de l enregistrement de la catégorie', 'type' => 'danger'];
+				$_SESSION['messages'] = $result ? ['message' => 'Nouvelle catégorie enregistrée', 'type' => 'success'] : ['message' => 'Erreur lors de l\'enregistrement de la catégorie', 'type' => 'danger'];
 				
 				header('Location:index.php?controller=categories&action=list');
 				exit;

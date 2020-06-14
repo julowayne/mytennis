@@ -31,7 +31,7 @@ if(isset($_GET['action'])){
 			else{
 				$result = addCategory($_POST);
 				
-				$_SESSION['messages'][] = $result  ? '<div class="alert alert-success"> Catégorie enregistré ! </div>' : '<div class="alert alert-danger"> Erreur lors de l enregistrement de la catégorie... :(</div>';
+				$_SESSION['messages'] = $result ? ['message' => 'Utilisateur supprimé', 'type' => 'success'] : ['message' => 'Erreur lors de la suppression de l\'utilisateur', 'type' => 'danger'];
 				
 				header('Location:index.php?controller=categories&action=list');
 				exit;
