@@ -9,8 +9,8 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'list' :
-			$products = getAllProducts();
-			/* $productsCategories = getProductCategories($_GET['id']); */
+			$productsByCategories = getAllProducts();
+			$categoriesOfProducts = getAllProductsCategories();
 			$view = 'views/productList.php';
 			$pageTitle = "Liste de tous les produits";
 			break;

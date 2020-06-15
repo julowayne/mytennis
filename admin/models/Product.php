@@ -4,12 +4,28 @@ function getAllProducts()
 {
     $db = dbConnect();
 
-    $query = $db->query('SELECT * FROM products');
-	$products =  $query->fetchAll();
-
-    return $products;
+    $query = $db->query('
+	SELECT p. *, pc. *
+	FROM products p
+	INNER JOIN products_categories pc ON p.id = pc.product_id ORDER BY name '
+	);
+	return $query->fetchAll();
 }
+function getAllProductsCategories()
+{
+    $db = dbConnect();
 
+    $query = $db->query('
+	SELECT c. *
+	FROM categories c
+	INNER JOIN products_categories pc ON c.id = pc.category_id
+	GROUP BY c.id'
+	);
+	/* $categoriesOfProducts = $query->execute([
+		$productId
+	]); */
+	return $query->fetchAll();
+}
 
 function getProduct($id){
 	$db = dbConnect();
@@ -126,7 +142,6 @@ function insertProductsCategoriesLinks($id, $categoriesIds){
 	$query = $db->prepare($queryString);
 	return $query->execute($queryValues);	
 }
-
 
 function getProductCategories($productId){
 	$db = dbConnect();

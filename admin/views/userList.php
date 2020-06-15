@@ -22,8 +22,8 @@
     <tbody>
     <tr>
         <td><?=  htmlspecialchars($user['id']) ?></td>
-        <td><?=  htmlspecialchars($user['firstname']) ?></td>
         <td><?=  htmlspecialchars($user['lastname']) ?></td>
+        <td><?=  htmlspecialchars($user['firstname']) ?></td>
         <td><?=  htmlspecialchars($user['email']) ?></td>
         <td><?=  htmlspecialchars($user['is_admin']) ?></td>
         <td><a class="btn btn-warning mr-2"  href="index.php?controller=users&action=edit&id=<?= $user['id'] ?>" type="button">Modifier</a><a onclick="return confirm('êtes vous sur ?')" class="btn btn-danger" href="index.php?controller=users&action=delete&id=<?= $user['id'] ?>"type="button">Supprimer</a></td>

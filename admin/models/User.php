@@ -4,7 +4,7 @@ function getAllUsers()
 {
     $db = dbConnect();
 
-    $query = $db->query('SELECT * FROM users');
+    $query = $db->query('SELECT * FROM users ORDER BY lastname');
 	$users =  $query->fetchAll();
 
     return $users;
