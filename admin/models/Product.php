@@ -26,12 +26,13 @@ function addProduct($informations)
 {
 	$db = dbConnect();
 	
-	$query = $db->prepare("INSERT INTO products (name, short_description, price, quantity) VALUES( :name, :short_description, :price, :quantity)");
+	$query = $db->prepare("INSERT INTO products (name, short_description, price, quantity, activated) VALUES ( :name, :short_description, :price, :quantity, :activated)");
 	$result = $query->execute([
 		'name' => $informations['name'],
 		'short_description' => $informations['short_description'],
 		'price' => $informations['price'],
 		'quantity' => $informations['quantity'],
+		'activated' => $informations['activated']
 	]);
 	if($result){
 		$productId = $db->lastInsertId();
@@ -55,8 +56,7 @@ function addProduct($informations)
 				'image' => $new_file_name
 			]);		
 		}
-	}
-	
+	}	
 	return $result;
 }
 
@@ -64,12 +64,13 @@ function addProduct($informations)
 function updateProduct($id, $informations){
 	$db = dbConnect();
 
-	$query = $db->prepare("UPDATE products SET name = ?, short_description = ?, price = ?, quantity = ? WHERE id = ?");
+	$query = $db->prepare("UPDATE products SET name = ?, short_description = ?, price = ?, quantity = ?, activated = ? WHERE id = ?");
 	$result = $query->execute([
         $informations['name'],
 		$informations['short_description'],
 		$informations['price'],
 		$informations['quantity'],
+		$informations['activated'],
 		$id,
 	]);
 	$query = $db->prepare("DELETE FROM products_categories WHERE product_id = ?");

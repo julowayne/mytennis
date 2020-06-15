@@ -20,10 +20,9 @@ if(isset($_GET['action'])){
 			$pageTitle = "Ajout d'un produit";
 			break;
 		case 'add' :
-			if(empty($_POST['name'])){
-		
-				if(empty($_POST['name'])){
-					$_SESSION['messages'][] = 'Le champ nom est obligatoire !';
+			if(empty($_POST['name']) || empty($_POST['short_description']) || empty($_POST['quantity']) || empty($_POST['price'])){
+				if(empty($_POST['name']) || empty($_POST['short_description']) || empty($_POST['quantity']) || empty($_POST['price'])){
+					$_SESSION['messages'][] = 'Les champs sont obligatoires sauf IMAGE & CATEGORIES!';
 				}
 				
 				$_SESSION['old_inputs'] = $_POST;
@@ -31,6 +30,9 @@ if(isset($_GET['action'])){
 				exit;
 			}
 			else{
+				if(empty($_POST['activated'])){
+					$_POST['activated'] = 0;
+				}
 				$resultAdd = addProduct($_POST);
 				$_SESSION['messages'] = $resultAdd ? ['message' => 'Nouveau produit enregistré', 'type' => 'success'] : ['message' => 'Erreur lors de l\'enregistrement du produit', 'type' => 'danger'];
 				header('Location:index.php?controller=products&action=list');
@@ -39,10 +41,10 @@ if(isset($_GET['action'])){
 			break;
 		case 'edit' :
 			if(!empty($_POST)){
-				if(empty($_POST['name'])){
+				if(empty($_POST['name']) || empty($_POST['short_description']) || empty($_POST['quantity']) || empty($_POST['price'])){
 					
-					if(empty($_POST['name'])){
-						$_SESSION['messages'][] = 'Le champ nom est obligatoire !';
+					if(empty($_POST['name']) || empty($_POST['short_description']) || empty($_POST['quantity']) || empty($_POST['price'])){
+						$_SESSION['messages'][] = 'Les champs sont obligatoires sauf IMAGE & CATEGORIES!';
 					}
 					
 					$_SESSION['old_inputs'] = $_POST;
@@ -51,6 +53,9 @@ if(isset($_GET['action'])){
 				}
 		
 				else {
+					if(empty($_POST['activated'])){
+						$_POST['activated'] = 0;
+					}
 					$result = updateProduct($_GET['id'], $_POST);
 					$_SESSION['messages'] = $result ? ['message' => 'Produit mis à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise a jour du produit', 'type' => 'danger'];
 					header('Location:index.php?controller=products&action=list');
