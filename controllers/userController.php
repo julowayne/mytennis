@@ -91,6 +91,7 @@ if(isset($_GET['action'])){
 		case 'disconnected' :
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
+				unset($_SESSION['cart']);
 				$_SESSION['messages'] = isset($_SESSION['user']) ? ['message' => 'Erreur lors de la déconnexion', 'type' => 'danger'] : ['message' => 'Vous êtes déconnecté de Mytennis', 'type' => 'success'];
 				header('location:index.php');
 				exit;

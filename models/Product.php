@@ -30,3 +30,22 @@ function getProductByCategories($categoryId){
 	]);
 	return $query->fetchAll();
 }
+
+function getCartProducts(){
+	$db = dbConnect();
+	foreach($_SESSION['cart'] as $productId => $quantity){
+	$query = $db->query("SELECT * FROM products WHERE id = $productId");
+	$cartProducts = $query->fetchAll();
+	}
+	return $cartProducts ;
+}
+/* function getProduct(){
+	$db = dbConnect();
+	$queryString = "SELECT *
+	FROM products
+	WHERE product_id IN ()
+	");
+	$queryString .= "(:$_SESSION['cart'][$key])";
+	$query->execute([$id]);
+	return $query->fetchAll();
+} */

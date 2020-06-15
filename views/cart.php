@@ -13,15 +13,17 @@
                 <td><?= $_SESSION['user']['lastname'] ?></td>
                 <td><?= $_SESSION['user']['firstname'] ?></td>
                 <td><?= $_SESSION['user']['address'] ?></td>
-                <td>Raquette</td>
-                <td>15</td>
-                <td>1500</td>
+                <?php foreach ($cartProducts as $product): ?> 
+                    <td><?= $product['name'] ?></td>
+                    <td><?= $product['quantity'] ?></td>
+                    <td><?= $product['price'] ?></td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th colspan="5">Total:</th>
                 <td>100</td>
+                <?php endforeach; ?>
             </tr>
         </tfoot>
     </table>   

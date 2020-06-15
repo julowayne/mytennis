@@ -459,30 +459,14 @@ a:hover {
   border: 1px solid white;
   background-color: rgba(117, 190, 218, 0.1);
   width: 600px;
-  height: 53vh;
+  height: 55vh;
   padding: 2em;
 }
-.product-container #description div {
-  display: inline-block;
+.product-container #description form #quantity {
+  width: 35%;
 }
-.product-container #description h3 {
-  margin-top: 0;
-  font-size: 20px;
-}
-.product-container #description p {
-  font-size: 25px;
-  height: 15vh;
-}
-.product-container #description #stats {
-  margin-top: 0.5rem;
-  font-size: 25px;
-}
-.product-container #description #price {
-  margin-left: 49px;
-  font-size: 100px;
-}
-.product-container input[type=submit] {
-  /* margin-top: 20px; */
+.product-container #description input[type=submit] {
+  margin-top: 20px;
   border: 0;
   width: 100%;
   outline: none;
@@ -494,9 +478,30 @@ a:hover {
   background: white;
   color: black;
 }
-.product-container input[type=submit]:hover, .product-container input[type=submit]:focus {
+.product-container #description input[type=submit]:hover, .product-container #description input[type=submit]:focus {
   background: orange;
   color: white;
+}
+.product-container div {
+  display: inline-block;
+}
+.product-container h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+.product-container p {
+  font-size: 25px;
+  height: 15vh;
+  margin-bottom: 0;
+}
+.product-container #stats {
+  margin-top: 0.5rem;
+  font-size: 25px;
+  text-align: center;
+}
+.product-container #price {
+  margin-left: 49px;
+  font-size: 100px;
 }
 
 .cart-container {

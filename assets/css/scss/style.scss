@@ -460,8 +460,31 @@ a {
     border: 1px solid white;
     background-color: rgba(117, 190, 218, 0.1);
     width: 600px;
-    height: 53vh;  
+    height: 55vh;  
     padding: 2em;
+    form {
+      #quantity {
+        width: 35%;
+      }
+    }
+      input[type=submit] {
+        margin-top: 20px;
+        border:0;
+        width: 100%;
+        outline:none;
+        border-radius:2px;
+        padding:9px 0;
+        font-size:2rem;
+        letter-spacing:.1em;
+        cursor: pointer;
+        background:white;
+        color:black;
+        &:hover, &:focus {
+          background:orange;
+          color:white
+        }
+      }
+    }
     div {
       display: inline-block;
     }
@@ -472,34 +495,18 @@ a {
     p {
       font-size: 25px;
       height: 15vh;
+      margin-bottom: 0;
     }
     #stats {
       margin-top: 0.5rem;
       font-size: 25px;
+      text-align: center;
     }
     #price {
       margin-left: 49px;
       font-size: 100px;
     }
    }
-   input[type=submit] {
-    /* margin-top: 20px; */
-    border:0;
-    width: 100%;
-    outline:none;
-    border-radius:2px;
-    padding:9px 0;
-    font-size:2rem;
-    letter-spacing:.1em;
-    cursor: pointer;
-    background:white;
-    color:black;
-    &:hover, &:focus {
-      background:orange;
-      color:white
-    }
-  }
- }
  .cart-container {
   max-width: 1000px;
   display: flex;
