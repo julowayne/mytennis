@@ -28,15 +28,17 @@
     </div>
     <div class="products-container">
         <?php foreach($productsByCategories as $productsByCategory): ?>
-        <a class="card" href="index.php?p=products&action=raquette&id=<?=$productsByCategory['id'] ?>">
-            <div class="product-head">
-            <span><?= $productsByCategory['name'] ?></span>
-            <span><?= $productsByCategory['price'] ?>€</span>    
-            </div>
-            <div>
-                <img src="admin/assets/images/products/<?= $productsByCategory['image']; ?>" alt="<?= $productsByCategory['name']; ?>">
-            </div>
-        </a>
+            <?php if($productsByCategory['activated'] == 1): ?>
+                <a class="card" href="index.php?p=products&action=raquette&id=<?=$productsByCategory['id'] ?>">
+                    <div class="product-head">
+                    <span><?= $productsByCategory['name'] ?></span>
+                    <span><?= $productsByCategory['price'] ?>€</span>    
+                    </div>
+                    <div>
+                        <img src="admin/assets/images/products/<?= $productsByCategory['image']; ?>" alt="<?= $productsByCategory['name']; ?>">
+                    </div>
+                </a>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 </div>

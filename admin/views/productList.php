@@ -28,8 +28,8 @@
         <?php endif; ?>
         <?php endforeach; ?>
         <td>
-        <a class="btn btn-warning mr-2"  href="index.php?controller=products&action=edit&id=<?= $productsByCategory['id'] ?>" type="button">Modifier</a>
-        <a onclick="return confirm('êtes vous sur ?')" class="btn btn-danger" href="index.php?controller=products&action=delete&id=<?= $productsByCategory['id'] ?>"type="button">Supprimer</a>
+        <a class="btn btn-warning mr-2"  href="index.php?controller=products&action=edit&id=<?= $productsByCategory['product_id'] ?>" type="button">Modifier</a>
+        <a onclick="return confirm('êtes vous sur ?')" class="btn btn-danger" href="index.php?controller=products&action=delete&id=<?= $productsByCategory['product_id'] ?>"type="button">Supprimer</a>
         </td>
     </tr>
     </tbody>

@@ -14,6 +14,7 @@ if(isset($_GET['action'])){
 			break;
 		case 'list' :
 			$productsByCategories = getProductByCategories($_GET['id']);
+			$products = getAllProducts();
 			$view = 'views/productList.php';
 			$pageTitle = "Liste des produits"; 
 			break;	

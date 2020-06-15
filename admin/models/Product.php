@@ -7,7 +7,7 @@ function getAllProducts()
     $query = $db->query('
 	SELECT p. *, pc. *
 	FROM products p
-	INNER JOIN products_categories pc ON p.id = pc.product_id ORDER BY name '
+	INNER JOIN products_categories pc ON p.id = pc.product_id ORDER BY p.id'
 	);
 	return $query->fetchAll();
 }
@@ -21,9 +21,6 @@ function getAllProductsCategories()
 	INNER JOIN products_categories pc ON c.id = pc.category_id
 	GROUP BY c.id'
 	);
-	/* $categoriesOfProducts = $query->execute([
-		$productId
-	]); */
 	return $query->fetchAll();
 }
 
@@ -32,7 +29,6 @@ function getProduct($id){
 
 	$query = $db->prepare('SELECT * FROM products WHERE id = ?');
 	$query->execute([$id]);
-
 
     return $query->fetch();
 }
