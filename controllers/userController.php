@@ -110,6 +110,11 @@ if(isset($_GET['action'])){
 			
 					else {
 						$result = updateUser($_GET['id'], $_POST);
+						$_SESSION['user']['firstname'] = $_POST['firstname'];
+						$_SESSION['user']['lastname'] = $_POST['lastname'];
+						$_SESSION['user']['email'] = $_POST['email'];
+						$_SESSION['user']['address'] = $_POST['address'];
+						
 						$_SESSION['messages'] = $result ? ['message' => 'Votre profil a été mis à jour', 'type' => 'success'] : ['message' => 'Erreur lors de la mise à jour de l\' utilisateur', 'type' => 'danger'];
 						header('Location:index.php');
 						exit;

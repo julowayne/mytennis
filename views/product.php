@@ -11,7 +11,7 @@
         <div id="price">
         <?= $product['price'] ?>€
         </div>
-        <form action="index.php?p=cart&action=addProduct">
+        <form action="index.php?p=cart&action=addProduct&product_id=<?= $product['id'] ?>" method="post">
             <input type="submit" value="Ajouter au panier"/>
         </form>
     </div>

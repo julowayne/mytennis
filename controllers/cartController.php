@@ -8,10 +8,9 @@ if(isset($_GET['action'])){
 	switch ($_GET['action']){
         case 'addProduct' :
             $_SESSION['cart'] = [
-                'name' => $product['name'],
+                'id' => $product['id'],
                 'quantity' => $product['quantity'],
-                'price' => $product['price'],
-        ];
+            ];
             // Ici ajouter au panier
             //rediriger vers display
             // Reçoit 2 informations : ID du produit & qty
@@ -19,7 +18,9 @@ if(isset($_GET['action'])){
             // s'assurer que la valeur demandée n'est pas supérieure au stock
             // sinon rediriger avec un msg
             // s'assurer que l'ID existe biens
-            $_SESSION['cart'] [$_GET['product_id']] = $_POST['quantity'];
+            /*  $_SESSION['cart'] [$_GET['product_id']] = $_POST['quantity']; */
+            $view = 'views/cart.php';
+			$pageTitle = "Votre panier";  
 			break;
         case 'deleteProduct' :
             unset(  $_SESSION['cart'] [$_GET['product_id']]);
