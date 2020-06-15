@@ -419,7 +419,8 @@ a:hover {
   margin-top: 1em;
   border: 1px solid white;
   padding: 0.5em;
-  /* border-collapse:separate; */
+  border-collapse: collapse;
+  text-align: left;
 }
 .profil-container .orders-form #orders th, .profil-container .orders-form #orders td {
   padding: 1em;
@@ -480,7 +481,7 @@ a:hover {
   margin-left: 49px;
   font-size: 100px;
 }
-.product-container button {
+.product-container input[type=submit] {
   /* margin-top: 20px; */
   border: 0;
   width: 100%;
@@ -493,9 +494,24 @@ a:hover {
   background: white;
   color: black;
 }
-.product-container button:hover, .product-container button:focus {
+.product-container input[type=submit]:hover, .product-container input[type=submit]:focus {
   background: orange;
   color: white;
+}
+
+.cart-container {
+  max-width: 1000px;
+  display: flex;
+  margin: 2em auto;
+}
+.cart-container #cart {
+  text-align: left;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+.cart-container #cart th, .cart-container #cart td {
+  padding: 1em;
+  border: 1px solid white;
 }
 
 /*# sourceMappingURL=style.css.map */

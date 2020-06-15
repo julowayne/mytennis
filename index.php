@@ -4,10 +4,10 @@ session_start();
 if(isset($_SESSION['viewAdmin'])){
     unset($_SESSION['viewAdmin']);
 }
-/* Print_r ($_SESSION); */
+Print_r ($_SESSION);
 
 if(!isset($_SESSION['cart'])){
-    $_SESSION['cart'] = array();
+    $_SESSION['cart'] = [];
 }
 require ('helpers.php');
 require('models/Category.php');
@@ -17,20 +17,19 @@ if(isset($_GET['p'])):
     switch ($_GET['p']):
         case 'users' :
             require 'controllers/userController.php';
-            break;
-
+        break;
         case 'categories' :
             require 'controllers/categoryController.php';
-            break;
-
+        break;
         case 'products' :
             require 'controllers/productController.php';
-            break;
-
+        break;
         case 'orders' :
             require 'controllers/orderController.php';
-            break;    
-
+        break;    
+        case 'cart' :
+            require 'controllers/cartController.php';
+        break;    
         default :
             require 'controllers/indexController.php';
     endswitch;

@@ -31,28 +31,16 @@ function addUser($informations)
 		'is_admin' => $informations['is_admin'],
 		'address' => $informations['address'],
 	]);
-
-/* 	if($result && isset($_FILES['image']['tmp_name'])){
-		$productId = $db->lastInsertId();
-		
-		$allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
-		$my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
-		if (in_array($my_file_extension , $allowed_extensions)){
-			$new_file_name = $productId . '.' . $my_file_extension;
-			$destination = '../assets/images/products/' . $new_file_name;
-			$result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
-
-			$query = $db->prepare("UPDATE products SET image = :image WHERE id = $artistId ");
-			$query->execute([
-				'image' => $new_file_name
-			]);		
-		}
-	} */
 	
 	return $result;
 }
 function updateUser($id, $informations){
 	$db = dbConnect();
+	/* if($_SESSION['id'] != $id){
+		return false;
+	}else {
+
+	} */
 
 	$query = $db->prepare("UPDATE users SET firstname = ?, lastname = ?, email = ?, is_admin = ?, address = ? WHERE id = ?");
 	$result = $query->execute([

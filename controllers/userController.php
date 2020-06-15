@@ -29,11 +29,13 @@ if(isset($_GET['action'])){
 						'lastname' => $user['lastname'],
 						'email' => $user['email'],
 						'address' => $user['address'],
+						'is_admin' => $user['is_admin'],
 						'id' => $user['id'],
 					];
 					/* $_SESSION['messages'][] = 'Vous êtes inscrit sur Mytennis'; */
 					$_SESSION['messages'] = $user ? ['message' => 'Vous êtes inscrit sur MyTennis', 'type' => 'success'] : ['message' => 'L adresse email indiquée est déjà utilisée', 'type' => 'danger'];
-
+					$view = 'views/index.php';
+					$pageTitle = "Accueil";
 					header('location:index.php');
 					exit;
 				  }
@@ -44,6 +46,8 @@ if(isset($_GET['action'])){
 				  } */
 				}
 			  }
+			$view = 'views/form.php';
+			$pageTitle = "Formulaire d'inscription";
 			break;
 		case 'login' :
 			if(!empty($_POST)){
@@ -62,11 +66,11 @@ if(isset($_GET['action'])){
 								'lastname' => $user['lastname'],
 								'email' => $user['email'],
 								'address' => $user['address'],
+								'is_admin' => $user['is_admin'],
 								'id' => $user['id'],
 						];
 						/* $_SESSION['messages'][] = 'Vous êtes connecté sur Mytennis'; */
 						$_SESSION['messages'] = $user ? ['message' => 'Vous êtes connecté sur MyTennis!', 'type' => 'success'] : ['message' => 'Identifiants incorrects', 'type' => 'danger'];
-
 						header('location:index.php');
 						exit;
 					}
@@ -77,6 +81,8 @@ if(isset($_GET['action'])){
 					} */
 				}
 			}
+			$view = 'views/index.php';
+			$pageTitle = "Formulaire d'inscription";
 			break;
 		case 'password' :
 			$view = 'views/resetpassword.php';
@@ -85,7 +91,6 @@ if(isset($_GET['action'])){
 		case 'disconnected' :
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
-				/* $_SESSION['messages'][] = 'Vous êtes déconnecté de Mytennis'; */
 				$_SESSION['messages'] = isset($_SESSION['user']) ? ['message' => 'Erreur lors de la déconnexion', 'type' => 'danger'] : ['message' => 'Vous êtes déconnecté de Mytennis', 'type' => 'success'];
 				header('location:index.php');
 				exit;
@@ -123,9 +128,9 @@ if(isset($_GET['action'])){
 							exit;
 						}
 					}
-					$view = 'views/userProfil.php';
-					$pageTitle = "Profil";
 				}
+				$view = 'views/userProfil.php';
+				$pageTitle = "Informations de votre profil";
 			break;	
         default :
 		header('Location:index.php');

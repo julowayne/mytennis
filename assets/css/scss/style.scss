@@ -419,7 +419,8 @@ a {
       margin-top: 1em;
       border: 1px solid white;
       padding: 0.5em;
-      /* border-collapse:separate; */
+      border-collapse: collapse;
+      text-align: left;
       th, td {
         padding: 1em;
         border:1px solid white;
@@ -481,7 +482,7 @@ a {
       font-size: 100px;
     }
    }
-   button {
+   input[type=submit] {
     /* margin-top: 20px; */
     border:0;
     width: 100%;
@@ -498,4 +499,18 @@ a {
       color:white
     }
   }
+ }
+ .cart-container {
+  max-width: 1000px;
+  display: flex;
+  margin: 2em auto;
+  #cart {
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 1em;
+    th, td {
+      padding: 1em;
+      border:1px solid white;
+    }
+  } 
  }

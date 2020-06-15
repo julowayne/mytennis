@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panier</title>
-</head>
-<body>
-    <?php require ('partials/header.php'); ?>
-    <?php $total = 0?>
-    <?php foreach($cartProducts as $cartProduct) ?>
-    <?= $rowTotal = $product['price'] * $_SESSION['cart'][$product['id']][$product['quantity']] 
-    $total += $rowTotal?>
-
-    <?php endforeach; ?>
-    <a href="index.php?controller=cart&action=deleteProduct&productId=$product['id']">Supprimer</a>
-
-   <?php if(isset($_SESSION['user'])){
-       <a href="index.php?controller=order&action=new">Commander</a>
-    }
-    ?>
-    <?php require ('partials/footer.php'); ?>
-</body>
-</html>
+<div class="cart-container">
+    <table id="cart">
+        <thead>
+            <tr>
+                <th colspan="3">Client</th>
+                <th>Produit</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?= $_SESSION['user']['lastname'] ?></td>
+                <td><?= $_SESSION['user']['firstname'] ?></td>
+                <td><?= $_SESSION['user']['address'] ?></td>
+                <td>Raquette</td>
+                <td>15</td>
+                <td>1500</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="5">Total:</th>
+                <td>100</td>
+            </tr>
+        </tfoot>
+    </table>   
+</div>

@@ -21,7 +21,7 @@
                 <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/search2.png' : './assets/images/search2.png' ?>" alt="logo recherche"></a>
             </div>
             <div>
-                <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
+                <a href="index.php?p=cart&action=display"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
             </div> 
             <div id="account">
             <?php if (!isset($_SESSION['user'])): ?>
@@ -32,6 +32,9 @@
                     <a class="dropbtn" href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>"><?= $_SESSION['user']['firstname'] ?></a>
                     <div class="dropdown-content">
                             <a href="index.php?p=users&action=disconnected">déconnexion</a>
+                            <?php if($_SESSION['user']['is_admin'] == 1): ?>
+                            <a href="./admin/index.php?controller=index">Administration</a>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </div>
                 </div>  
