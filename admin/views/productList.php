@@ -20,7 +20,7 @@
 	<?php foreach($productsByCategories as $productsByCategory): ?> 
     <tbody>
     <tr>
-        <td><?=  htmlspecialchars($productsByCategory['id']) ?></td>
+        <td><?=  htmlspecialchars($productsByCategory['product_id']) ?></td>
         <td><?=  htmlspecialchars($productsByCategory['name']) ?></td>
         <?php foreach($categoriesOfProducts as $categoriesOfProduct): ?>
         <?php if($categoriesOfProduct['id'] == $productsByCategory['category_id'] ): ?>
