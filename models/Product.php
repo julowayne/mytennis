@@ -33,14 +33,16 @@ function getProductByCategories($categoryId){
 
 function getCartProducts(){
 	$db = dbConnect();
-	foreach($_SESSION['cart'] as $productId => $quantity){
-	$query = $db->query("SELECT * FROM products WHERE id = $productId");
-	$cartProducts = $query->fetchAll();
+	foreach($_SESSION['cart'] as $product_id => $quantity){
+	$query = $db->query("SELECT id, name, price, quantity FROM products WHERE id = $product_id");
+	$result[] = $query->fetch();
 	}
-	return $cartProducts ;
+	return $result;
 }
 /* function getProduct(){
 	$db = dbConnect();
+	foreach $arrayKeys = array_keys($cart);
+	 
 	$queryString = "SELECT *
 	FROM products
 	WHERE product_id IN ()

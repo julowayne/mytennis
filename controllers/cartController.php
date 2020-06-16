@@ -42,9 +42,9 @@ if(isset($_GET['action'])){
             exit;
 			break;
         case 'display' :
-            $cartProducts = [];
-             /* foreach $_SESSION['cart'] as $product_id => $quantity */
-            $cartProducts[] = getCartProducts(); 
+            $cartProducts = []; 
+            $cartProducts = getCartProducts(); 
+            print_r($cartProducts);
             $view = 'views/cart.php';
 			$pageTitle = "Votre panier"; 
 			break;

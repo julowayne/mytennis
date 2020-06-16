@@ -1,3 +1,4 @@
+<?php $total = 0; ?>
 <div class="cart-container">
     <table id="cart">
         <thead>
@@ -6,24 +7,26 @@
                 <th>Produit</th>
                 <th>Quantité</th>
                 <th>Prix</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <?php foreach ($cartProducts as $product): ?>
+            <tr> 
                 <td><?= $_SESSION['user']['lastname'] ?></td>
                 <td><?= $_SESSION['user']['firstname'] ?></td>
                 <td><?= $_SESSION['user']['address'] ?></td>
-                <?php foreach ($cartProducts as $product): ?> 
-                    <td><?= $product['name'] ?></td>
-                    <td><?= $product['quantity'] ?></td>
-                    <td><?= $product['price'] ?></td>
+                <td><?= $product['name'] ?></td>
+                <td><?= $product['quantity'] ?></td>
+                <td><?= $product['price'] ?></td>
+                <td><?= $rowTotal = $product['price'] * $product['quantity']?></td>
+                <?php endforeach; ?>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="5">Total:</th>
-                <td>100</td>
-                <?php endforeach; ?>
+                <th colspan="6">Total</th>
+                <td><?php $total += $rowTotal ?></td>
             </tr>
         </tfoot>
     </table>   
