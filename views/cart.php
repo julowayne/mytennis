@@ -32,5 +32,8 @@
                 <td><?= $total?></td>
             </tr>
         </tfoot>
-    </table>   
+    </table>
+        <form action="" id="validation">
+            <input type="submit" value="Valider mon panier">
+        </form>   
 </div>

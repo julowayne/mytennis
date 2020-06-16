@@ -507,17 +507,54 @@ a {
       font-size: 100px;
     }
    }
+
+   /* Panier*/
  .cart-container {
   max-width: 1000px;
-  display: flex;
+  display: block;
   margin: 2em auto;
   #cart {
-    text-align: left;
+    max-width: 900px;
     border-collapse: collapse;
     margin-top: 1em;
-    th, td {
-      padding: 1em;
+    tr:nth-child(odd) td{
+      background-color:rgba(0, 0, 0, 0.3);
+    }
+    thead th {
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.5);
       border:1px solid white;
+      font-size:20px;
+    }
+    th, td {
+      text-align: center;
+      padding: 1em;
+    }
+    tfoot th {
+      text-align: right;
+      font-size: 20px;
     }
   } 
+  #validation {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 900px;
+    input[type=submit] {
+      margin-top: 20px;
+      border:0;
+      width: 50%;
+      outline:none;
+      border-radius:2px;
+      padding:9px 0;
+      font-size:2rem;
+      letter-spacing:.1em;
+      cursor: pointer;
+      background:white;
+      color:black;
+      &:hover, &:focus {
+        background:orange;
+        color:white
+      }
+    }
+  }
  }

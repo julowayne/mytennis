@@ -44,7 +44,7 @@ if(isset($_GET['action'])){
         case 'display' :
             $cartProducts = []; 
             $cartProducts = getCartProducts(); 
-            print_r($cartProducts);
+            /* print_r($cartProducts); */
             $view = 'views/cart.php';
 			$pageTitle = "Votre panier"; 
 			break;
