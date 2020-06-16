@@ -7,6 +7,7 @@
                 <th>Produit</th>
                 <th>Quantité</th>
                 <th>Prix</th>
+                <th>Action</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -18,9 +19,10 @@
                 <td><?= $_SESSION['user']['address'] ?></td>
                 <td><?= $product['name'] ?></td>
                 <td><?= $product['quantity'] ?></td>
-                <td><?= $product['price'] ?></td>
+                <td><?= $product['price'] ?> €</td>
+                <td><a  href="index.php?p=cart&action=deleteProduct&product_id=<?= $product['id'] ?>">Supprimer</a></td>
                 <td>
-                    <?= $rowTotal = $product['price'] * $product['quantity'] ?>
+                    <?= $rowTotal = $product['price'] * $_SESSION['cart'][$product['id']] ?> €
                     <?php $total += $rowTotal ?>
                 </td>
                 <?php endforeach; ?>
@@ -28,8 +30,8 @@
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="6">Total</th>
-                <td><?= $total?></td>
+                <th colspan="7">Total</th>
+                <td><?= $total?> €</td>
             </tr>
         </tfoot>
     </table>

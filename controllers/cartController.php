@@ -26,10 +26,7 @@ if(isset($_GET['action'])){
 			$pageTitle = "Votre panier";  */ 
 			break;
         case 'deleteProduct' :
-            unset($_SESSION['cart'] [$_GET['product_id']]);
-            // Ici supprimer du panier
-            // afficher un msg
-            //rediriger vers display
+            unset($_SESSION['cart'][$_GET['product_id']]);
             header('location:index.php?p=cart&action=display');
             exit;
 			break;
