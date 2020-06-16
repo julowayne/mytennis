@@ -19,14 +19,17 @@
                 <td><?= $product['name'] ?></td>
                 <td><?= $product['quantity'] ?></td>
                 <td><?= $product['price'] ?></td>
-                <td><?= $rowTotal = $product['price'] * $product['quantity']?></td>
+                <td>
+                    <?= $rowTotal = $product['price'] * $product['quantity'] ?>
+                    <?php $total += $rowTotal ?>
+                </td>
                 <?php endforeach; ?>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th colspan="6">Total</th>
-                <td><?php $total += $rowTotal ?></td>
+                <td><?= $total?></td>
             </tr>
         </tfoot>
     </table>   
