@@ -3,7 +3,7 @@
         <h2>Filtres</h2>
         <div>
             <h4>Prix :</h4>
-            <label for="increasing"><input type="checkbox" class="stay-connected" id="increasing" name="increasing" value="<?= isset($_GET['order']) ? $_GET['order'] : 'ASC'; ?>">Croissant</label><br>
+            <label for="increasing"><input type="checkbox" class="stay-connected" id="increasing" name="increasing">Croissant</label><br>
             <label for="decreasing"><input type="checkbox" class="stay-connected" id="decreasing" name="decreasing">Décroissant</label>
         </div>
         <div>
@@ -29,7 +29,9 @@
     <div class="products-container">
         <?php foreach($productsByCategories as $productsByCategory): ?>
             <?php if($productsByCategory['activated'] == 1): ?>
-                <a class="card" href="index.php?p=products&action=raquette&id=<?=$productsByCategory['id'] ?>">
+                <a class="card" href="index.php?p=products&action=product&id=<?=$productsByCategory['id'] ?>">
+<!--                 <a class="card" href="index.php?p=products&action<?= isset($product) && ($_GET['action']) == 'product' ? '&id='.$productsByCategory['id']  : 'default' ?>">
+ -->               
                     <div class="product-head">
                     <span><?= $productsByCategory['name'] ?></span>
                     <span><?= $productsByCategory['price'] ?>€</span>    

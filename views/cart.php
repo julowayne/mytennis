@@ -1,6 +1,9 @@
 <?php $total = 0; ?>
 <div class="cart-container">
-    <table id="cart">
+    <?php if(isset($_SESSION['messages'])): ?>	
+            <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
+    <?php endif; ?>
+    <table id="cart" class="<?= empty($cartProducts) ? 'hide' : '' ; ?>">
         <thead>
             <tr>
                 <th colspan="3">Client</th>

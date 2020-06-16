@@ -7,26 +7,28 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
         case 'addProduct' :
-            /* $_SESSION['cart'][] = [
-                'id' => $_GET['product_id'],
-                'quantity' => $_POST['quantity'],
-            ]; */
-            $_SESSION['cart'] [$_GET['product_id']] = $_POST['quantity'];
-            header('location:index.php?p=cart&action=display');
-            exit;
-            // Ici ajouter au panier
-            //rediriger vers display
-            // Reçoit 2 informations : ID du produit & qty
-            // s'assurer que la valeur reçue est un INT positif ou un float
-            // s'assurer que la valeur demandée n'est pas supérieure au stock
-            // sinon rediriger avec un msg
-            // s'assurer que l'ID existe bien
-            /*  $_SESSION['cart'] [$_GET['product_id']] = $_POST['quantity']; */
-            /* $view = 'views/cart.php';
-			$pageTitle = "Votre panier";  */ 
+    
+           /*  var_dump($_POST['quantity']);
+            die(); */
+            if(empty($_POST['quantity']) || $_POST['quantity'] < 1 ){
+                $_SESSION['messages'] = ['message' => 'Vous devez choisir une quantité pour ajouter un produit a votre panier', 'type' => 'danger'];
+                header('location:index.php?p=cart&action=display');
+                exit;
+            }else {
+                $_SESSION['cart'] [$_GET['product_id']] = $_POST['quantity'];
+                $_SESSION['messages'] = ['message' => 'Ajout du produit a votre panier', 'type' => 'success'];
+               /*  var_dump($_POST['quantity']);
+                die(); */
+
+                header('location:index.php?p=cart&action=display');
+                exit;
+            }
+
 			break;
         case 'deleteProduct' :
             unset($_SESSION['cart'][$_GET['product_id']]);
+            $_SESSION['messages'] = ['message' => 'Suppression du produit de votre panier', 'type' => 'success'];
+
             header('location:index.php?p=cart&action=display');
             exit;
 			break;
@@ -41,7 +43,9 @@ if(isset($_GET['action'])){
         case 'display' :
             $cartProducts = []; 
             $cartProducts = getCartProducts(); 
-            /* print_r($cartProducts); */
+            if(empty($cartProducts)){
+                $_SESSION['messages'] = ['message' => 'Vous n\'avez pas encore ajouté de produit a votre panier', 'type' => 'danger'];
+            }
             $view = 'views/cart.php';
 			$pageTitle = "Votre panier"; 
 			break;

@@ -7,7 +7,7 @@ require('models/User.php');
 
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
-		case 'raquette' :
+		case 'product' :
 			$product = getProduct($_GET['id']);
 			$view = 'views/product.php';
 			$pageTitle = "Liste des raquettes";  
@@ -25,7 +25,8 @@ if(isset($_GET['action'])){
 		case 'delete' :
 			break;		
         default :
-		header('Location:index.php?controller=users&action=list');
+		header('Location:index.php?p=categories&action=list');
+		exit;
 	}
 }
 else{

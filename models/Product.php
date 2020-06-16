@@ -23,7 +23,7 @@ function getProductByCategories($categoryId){
 	SELECT p. *
 	FROM products p
 	INNER JOIN products_categories pc ON p.id = pc.product_id 
-	WHERE pc.category_id = ?'
+	WHERE pc.category_id = ? ORDER BY price DESC'
 	);
 	$productsByCategories = $query->execute([
 		$categoryId
