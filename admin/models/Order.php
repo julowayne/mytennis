@@ -15,7 +15,7 @@ function getOrder($id){
 
 	$query = $db->prepare('SELECT * FROM orders WHERE id = ?');
 	$query->execute([$id]);
+    $order = $query->fetch();
 
-
-    return $query->fetch();
+    return $order;
 }

@@ -13,9 +13,9 @@ if(isset($_GET['action'])){
 			$pageTitle = "Liste de toutes les commandes";
 			break;
 		case 'details' :
-			$categories = getAllCategories();
-			$view = 'views/categoryForm.php';
-			$pageTitle = "Ajout d'une catégorie";
+			$order = getOrder($_GET['id']);
+			$view = 'views/OrderDetails.php';
+			$pageTitle = "Détails de la commande";
 			break;
         break;
         default :

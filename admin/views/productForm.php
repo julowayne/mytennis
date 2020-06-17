@@ -38,6 +38,10 @@
 
 		<label for="image">image :</label>
 		<input class="form-control-file" type="file" name="image" id="image" /><br>
+		<!-- <?php if(isset($product) && $product['image'] != null):?>
+		image actuelle : <br>
+		<img src="../assets/images/products/<?=$product['image'] ?>" alt="">
+		<?php endif;?> -->
 		<label for="images[]">images secondaires :</label>
 		<input class="form-control-file" type="file" name="images[]" id="image" multiple="multiple" /><br>
 		<label for="activated"><input type="checkbox" name="activated" value="1" checked> Activer</label><br>

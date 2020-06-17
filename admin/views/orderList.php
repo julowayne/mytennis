@@ -26,7 +26,7 @@
         <td><?=  htmlspecialchars($order['lastname']) ?></td>
         <td><?=  htmlspecialchars($order['total']) ?></td>
         <td>
-        <a class="btn btn-info mr-2"  href="index.php?controller=products&action=details&id=<?= $order['id'] ?>" type="button">Details</a>
+        <a class="btn btn-info mr-2"  href="index.php?controller=orders&action=details&id=<?= $order['id'] ?>" type="button">Details</a>
         </td>
     </tr>
     </tbody>

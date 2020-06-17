@@ -44,7 +44,6 @@ function addProduct($informations)
 		}
 	}	
 	if($result && isset($_FILES['image']['tmp_name'])){
-	
 		
 		$allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
 		$my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
@@ -108,6 +107,9 @@ function updateProduct($id, $informations){
 				'image' => $new_file_name
 			]);		
 		}
+	}
+	if($result && !empty($_FILES['images']['tmp_name'])){
+		$result = uploadMulitpeImages($productId);
 	}
 	return $result;
 }
@@ -192,7 +194,7 @@ function getProduct($id){
 	$query->execute([
 		$id,
 	]);
-	return $query->fetchAll();
+	return $query->fetch();
 }
 
 function uploadMulitpeImages($id){
