@@ -40,7 +40,8 @@
             </tr>
         </tfoot>
     </table>
-        <form action="" id="validation">
+        <form action="index.php?p=orders&action=new" id="validation" method="post">
             <input type="submit" value="Valider mon panier">
-        </form>   
+        </form> 
+        <button value="Valider mon panier"><a href="index.php?p=orders&action=new"></a></button>
 </div>

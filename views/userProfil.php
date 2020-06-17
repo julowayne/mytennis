@@ -24,7 +24,7 @@
     <div class="orders-form">
         <div class="headform">
             <div class="profil">
-               Historique des commandes
+               Mes commandes
             </div>
         </div>
         <?php if(isset($_SESSION['messages'])): ?>

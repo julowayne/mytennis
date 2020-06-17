@@ -3,41 +3,30 @@
 require('models/Order.php');
 require('models/Product.php');
 require('models/User.php');
-require('models/Cart.php');
-require('models/Order.php');
 
 
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
         case 'new' :
-            // verifier si user = connected
-            if(isset($_SESSION['user'])){
-
+           /*  $_SESSION['cart'] [$_GET['product_id']] = $_POST['quantity']; */
+            if(isset($_SESSION['user']) && !empty($_SESSION['cart'])){
+                $order = uploadOrder();
+                $_SESSION['messages'] = ['message' => 'Votre commande a bien été enregistrée', 'type' => 'success'];
+                header('location:index.php?p=users&action=edit&id='. $_GET['id']);
+                exit;
             }
             else {
-                header('location:index.php?p=users&action=form');
-				exit;
+                $_SESSION['messages'] = ['message' => 'Vous devez être connecté pour passer une commande', 'type' => 'danger'];
             }
-            // Ici recuperer produit & quantity avec $_SESSION['cart']
-            //creer la commande
-            //rediriger vers list des commandes
 			break;
         case 'view' :
-            //affichage d'une commande
 			break;
         case 'list':
-            //afficher liste des commandes
 			break;
         case 'display' :
-            $cartsProduct = [];
-            foreach $_SESSION['cart'] as $product_id => $quantity
-            $cartsProduct = getCartProducts(); //SELECT FROM products WHERE id = product_id  (regarder IN SQL)
-            // Aller chercher tout les produits en BDD
-            //Afficher un message potentiel
-            //Appeller la vue de display
 			break;
         default :
-		header('Location:index.php?controller=users&action=list');
+		header('Location:index.php');
 	}
 }
 else{

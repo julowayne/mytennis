@@ -38,6 +38,8 @@
 
 		<label for="image">image :</label>
 		<input class="form-control-file" type="file" name="image" id="image" /><br>
+		<label for="images[]">images secondaires :</label>
+		<input class="form-control-file" type="file" name="images[]" id="image" multiple="multiple" /><br>
 		<label for="activated"><input type="checkbox" name="activated" value="1" checked> Activer</label><br>
 		
 		<input class="btn btn-lg btn-success mt-2" name="save" type="submit" value="Enregistrer" />

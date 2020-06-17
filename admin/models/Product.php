@@ -24,16 +24,6 @@ function getAllProductsCategories()
 	return $query->fetchAll();
 }
 
-function getProduct($id){
-	$db = dbConnect();
-
-	$query = $db->prepare('SELECT * FROM products WHERE id = ?');
-	$query->execute([$id]);
-
-    return $query->fetch();
-}
-
-
 function addProduct($informations)
 {
 	$db = dbConnect();
@@ -69,6 +59,9 @@ function addProduct($informations)
 			]);		
 		}
 	}	
+	if($result && !empty($_FILES['images']['tmp_name'])){
+		$result = uploadMulitpeImages($productId);
+	}
 	return $result;
 }
 
@@ -186,4 +179,50 @@ function deleteProduct($id)
 	$result = $query->execute([$id]);
 	
 	return $result;
+}
+
+function getProduct($id){
+	$db = dbConnect();
+	$query = $db->prepare('
+	SELECT p. *, GROUP_CONCAT(pi.images)
+	FROM products p
+	INNER JOIN products_images pi ON p.id = pi.product_id
+	WHERE p.id = ?'
+	);
+	$query->execute([
+		$id,
+	]);
+	return $query->fetchAll();
+}
+
+function uploadMulitpeImages($id){
+
+	
+	$db = dbConnect();
+	$queryString ="INSERT INTO products_images (product_id, images) VALUES ";
+	$queryValues = array();
+
+	
+	$allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
+
+	foreach($_FILES['images']['tmp_name'] as $key=>$productId){
+
+		$my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
+		if (in_array($my_file_extension , $allowed_extensions)){
+			$new_file_name = $productId . '.' . $my_file_extension;
+			$destination = './assets/images/products/' . $new_file_name;
+			$result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
+			$queryString .= "(:product_id_$key, :images_$key)";
+			if($key != array_key_last($_FILES['images']['tmp_name'])){
+				$queryString .= ',';
+			}			
+			//génération dynamique de $queryValues
+			$queryValues["product_id_$key"] = intval($id);	
+			$queryValues["images_$key"] = $new_file_name;	
+		}
+	}	
+	/* var_dump($queryValues, $queryString);
+	die(); */
+	$query = $db->prepare($queryString);
+	return $query->execute($queryValues);	
 }
