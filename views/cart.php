@@ -1,9 +1,9 @@
 <?php $total = 0; ?>
-<div class="cart-container">
+<div class="cart-container <?= empty($cartProducts) ? 'hide' : '' ; ?>">
     <?php if(isset($_SESSION['messages'])): ?>	
             <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
     <?php endif; ?>
-    <table id="cart" class="<?= empty($cartProducts) ? 'hide' : '' ; ?>">
+    <table id="cart">
         <thead>
             <tr>
                 <th colspan="3">Client</th>
@@ -15,21 +15,23 @@
             </tr>
         </thead>
         <tbody>
+            <?php if(isset($cartProducts)): ?>
             <?php foreach ($cartProducts as $product): ?>
             <tr> 
                 <td><?= $_SESSION['user']['lastname'] ?></td>
                 <td><?= $_SESSION['user']['firstname'] ?></td>
                 <td><?= $_SESSION['user']['address'] ?></td>
                 <td><?= $product['name'] ?></td>
-                <td><?= $product['quantity'] ?></td>
+                <td><?= $_SESSION['cart'][$product['id']] ?></td>
                 <td><?= $product['price'] ?> €</td>
                 <td><a  href="index.php?p=cart&action=deleteProduct&product_id=<?= $product['id'] ?>">Supprimer</a></td>
                 <td>
                     <?= $rowTotal = $product['price'] * $_SESSION['cart'][$product['id']] ?> €
                     <?php $total += $rowTotal ?>
                 </td>
-                <?php endforeach; ?>
             </tr>
+            <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
         <tfoot>
             <tr>
