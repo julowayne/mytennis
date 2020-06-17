@@ -44,14 +44,16 @@
                 </tr>
             </thead>
             <tbody>
+            <?php foreach($orders as $order): ?>
                 <tr>
-                    <td>Nom</td>
-                    <td>Prénom</td>
-                    <td>Adresse</td>
+                    <td><?= $order['lastname'] ?></td>
+                    <td><?= $order['firstname'] ?></td>
+                    <td><?= $order['address'] ?></td>
                     <td>Raquette</td>
                     <td>15</td>
                     <td>1500</td>
                 </tr>
+                <?php endforeach; ?>
             </tbody>
             <tfoot>
                 <tr>

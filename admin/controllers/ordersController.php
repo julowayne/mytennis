@@ -17,27 +17,6 @@ if(isset($_GET['action'])){
 			$view = 'views/categoryForm.php';
 			$pageTitle = "Ajout d'une catégorie";
 			break;
-		case 'add' :
-			if(empty($_POST['name']) && isset($_POST['image'])){
-				if(empty($_POST['name']) && isset($_POST['image'])){
-					/* var_dump($_POST);
-					die(); */
-					$_SESSION['messages'][] = 'Les champs NOM & IMAGE sont obligatoires pour ajouter une nouvelle catégorie !';
-				}
-				$_SESSION['old_inputs'] = $_POST;
-				header('Location:index.php?controller=categories&action=new');
-				exit;
-			}
-			else{
-				$result = addCategory($_POST);
-				
-				$_SESSION['messages'] = $result ? ['message' => 'Utilisateur supprimé', 'type' => 'success'] : ['message' => 'Erreur lors de la suppression de l\'utilisateur', 'type' => 'danger'];
-				
-				header('Location:index.php?controller=categories&action=list');
-				exit;
-			}
-			break;
-		case 'edit' :
         break;
         default :
             require('controllers/indexController.php');

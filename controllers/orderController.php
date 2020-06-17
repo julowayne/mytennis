@@ -12,6 +12,7 @@ if(isset($_GET['action'])){
             if(isset($_SESSION['user']) && !empty($_SESSION['cart'])){
                 $order = uploadOrder();
                 $_SESSION['messages'] = ['message' => 'Votre commande a bien été enregistrée', 'type' => 'success'];
+                unset($_SESSION['cart']);
                 header('location:index.php?p=users&action=edit&id='. $_GET['id']);
                 exit;
             }

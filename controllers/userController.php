@@ -135,6 +135,7 @@ if(isset($_GET['action'])){
 						}
 					}
 				}
+				$orders = getAllOrders();
 				$view = 'views/userProfil.php';
 				$pageTitle = "Informations de votre profil";
 			break;	

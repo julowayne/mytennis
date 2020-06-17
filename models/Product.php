@@ -34,7 +34,8 @@ function getProductByCategories($categoryId){
 function getCartProducts(){
 	$db = dbConnect();
 	foreach($_SESSION['cart'] as $product_id => $quantity){
-	$query = $db->query("SELECT id, name, price, quantity FROM products WHERE id = $product_id");
+	$query = $db->prepare("SELECT id, name, price, quantity FROM products WHERE id = ?");
+	$query->execute([$product_id,]);
 	$result[] = $query->fetch();
 	}
 	return $result;

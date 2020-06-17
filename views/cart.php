@@ -43,5 +43,4 @@
         <form action="index.php?p=orders&action=new" id="validation" method="post">
             <input type="submit" value="Valider mon panier">
         </form> 
-        <button value="Valider mon panier"><a href="index.php?p=orders&action=new"></a></button>
 </div>
