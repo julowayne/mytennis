@@ -10,41 +10,16 @@ body {
 	background-attachment: fixed;
 	font-family: "Roboto", sans-serif;
   color: white;
+  margin: 0;
+  height: 100%;
   min-height: 100vh;
 }
 *, *:before, *:after {
   box-sizing: border-box;
 }
-footer{
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid white;
-  div {
-    margin-top: 0.5rem;
-    a {
-      padding: 1rem;
-    }
-    img {
-      margin-left: 0.75rem;
-    }
-  }
-} 
-header {
-	nav {
-    text-align: center;
-    max-height: 13vh;
-    padding: 1.5em;
-    border: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.2);
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-    align-items: center;
-	}
-}
 a {
 	justify-content: space-between;
-	padding: 2em;
+	padding: 1.5em;
 	text-decoration: none;
 	cursor: pointer;
 	font-size: x-large;
@@ -55,14 +30,79 @@ a {
     color: orange;
   }
 }
+/*Partials*/
+header {
+	nav {
+    width: 100%;
+    text-align: center;
+    padding: 1.5em;
+    border-bottom: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.4);
+		display: flex;
+		justify-content: space-between;
+    align-items: center;
+    #burger  {
+      display: none;
+    }
+     div:nth-child(5)  {
+      display: none;
+    }
+
+	}
+}
+@media(max-width: 1200px) {
+  header  {
+    a {
+      padding: 0;
+      justify-content: space-evenly;
+    }
+    #categories > div > a:nth-child(1)  {
+      display: none;
+    }
+    #categories {
+      justify-content: space-evenly;
+    }
+    nav > #burger  {
+      display: block;
+      margin-right: 60px;
+    }
+  }
+  }
+@media(max-width: 800px){
+  header {
+    div {
+    display: flex;
+    justify-content: space-between;
+    }
+    nav > #account {
+      display: none;
+    }
+    nav > div:nth-child(5){
+      display: block;
+    }
+  }
+  #categories  {
+    display: none;
+  }
+}
+@media(max-width: 500px){
+  header {
+    #logo {
+      margin-left: 20px;
+    }
+    nav > #burger  {
+      margin-right: 20px;
+    }
+  }
+}
 #logo {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 #account {
   .dropbtn {
     justify-content: space-between;
     text-decoration: none;
-    margin-left: 30px;
+    margin-right: 60px;
     cursor: pointer;
     font-size: x-large;
     letter-spacing: 2px;
@@ -115,17 +155,6 @@ a {
 }
 #categories {
   justify-content: center;
-  /* .dropbtn {
-    justify-content: space-between;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: x-large;
-    letter-spacing: 2px;
-    color: white;
-    &:hover {
-      transform: scale(1.5);
-    }
-  }   */
   .dropdown {
     position: relative;
     display: inline-block;
@@ -168,6 +197,30 @@ a {
     &:hover {
       text-decoration: none;
       color: orange;
+    }
+  }
+}
+main {
+  max-width: 1600px;
+  margin: auto;
+  padding: 30px;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  a {
+    font-size: 15px;
+    padding: 2px;
+    margin-left: 3px;
+    img {
+      margin-left: 5px;
     }
   }
 }
@@ -282,6 +335,7 @@ a {
  /*Accueil*/ 
 .container {
   max-width: 800px;
+  min-height: 100%;
   text-align: center;
   justify-content: center;
   margin: 0 auto;
@@ -296,17 +350,16 @@ a {
         padding: 0.5rem;
         background-color: orangered;
       }
-  .first-article, #second-article {
+  .article{
     border: 1px solid white;
-    background-color: rgba(117, 190, 218, 0.1);
+    background-color: rgba(117, 190, 218, 0.05);
     max-width: 700px;
     border-radius: 3px;
-    height: 25vh;
     text-align: center;
     justify-content: center;
     padding: 20px;
-    margin: 30px auto;
-    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    margin: 22px auto;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 1);
     h1 {
       margin: 0 0 0 auto;
       padding: 0;

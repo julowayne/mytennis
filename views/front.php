@@ -8,12 +8,12 @@
 </head>
 <body>
 <?php require('partials/header.php'); ?>
-<div>
+<main>
     <?php
 	require $view;
-	$pageTitle 
-    ?>
-</div>
+	$pageTitle;
+	?>
+</main>	
 <?php require('partials/footer.php'); ?>    
 </body>
 </html>

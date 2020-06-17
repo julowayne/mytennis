@@ -1,5 +1,5 @@
 <div class="product-container">
-<?php if(isset($_SESSION['messages'])): ?>	
+    <?php if(isset($_SESSION['messages'])): ?>	
             <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
 	<?php endif; ?>
     <img src="./admin/assets/images/products/<?= $product['image'] ?>" alt="">

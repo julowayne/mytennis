@@ -28,7 +28,7 @@
 		<?php endforeach;?>
 		</select><br>
 		<label for="price">Prix :</label><br>
-		<input class="form-control" type="text" name="price" id="price" value="<?= isset($product) ? $product['price'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?>" /><br>
+		<input class="form-control" max="999" type="text" name="price" id="price" value="<?= isset($product) ? $product['price'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?>" /><br>
 
 		<label for="quantity">Quantité :</label><br>
 		<input class="form-control" type="number" min="0" name="quantity" id="quantity" value="<?= isset($product) ? $product['quantity'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['quantity'] : '' ?>" /><br>
@@ -38,11 +38,11 @@
 
 		<label for="image">image :</label>
 		<input class="form-control-file" type="file" name="image" id="image" /><br>
-		<!-- <?php if(isset($product) && $product['image'] != null):?>
+		<?php if(isset($product) && $product['image'] != null):?>
 		image actuelle : <br>
-		<img src="../assets/images/products/<?=$product['image'] ?>" alt="">
-		<?php endif;?> -->
-		<label for="images[]">images secondaires :</label>
+		<img src="./assets/images/products/<?=$product['image'] ?>" alt=""><br><br>
+		<?php endif;?>
+		<label for="images[]">Ajouter d'autres images :</label>
 		<input class="form-control-file" type="file" name="images[]" id="image" multiple="multiple" /><br>
 		<label for="activated"><input type="checkbox" name="activated" value="1" checked> Activer</label><br>
 		

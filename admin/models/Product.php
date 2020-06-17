@@ -207,24 +207,25 @@ function uploadMulitpeImages($id){
 	
 	$allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
 
-	foreach($_FILES['images']['tmp_name'] as $key=>$productId){
+			
+			foreach($_FILES['images']['tmp_name'] as $key=>$productId){
 
-		$my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
-		if (in_array($my_file_extension , $allowed_extensions)){
-			$new_file_name = $productId . '.' . $my_file_extension;
-			$destination = './assets/images/products/' . $new_file_name;
-			$result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
-			$queryString .= "(:product_id_$key, :images_$key)";
-			if($key != array_key_last($_FILES['images']['tmp_name'])){
-				$queryString .= ',';
-			}			
-			//génération dynamique de $queryValues
-			$queryValues["product_id_$key"] = intval($id);	
-			$queryValues["images_$key"] = $new_file_name;	
-		}
-	}	
-	/* var_dump($queryValues, $queryString);
-	die(); */
+				$my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
+				if (in_array($my_file_extension , $allowed_extensions)){
+					$new_file_name = $productId . '.' . $my_file_extension;
+					$destination = './assets/images/products/' . $new_file_name;
+					$result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
+					$queryString .= "(:product_id_$key, :images_$key)";
+					if($key != array_key_last($_FILES['images']['tmp_name'])){
+						$queryString .= ',';
+					}			
+					//génération dynamique de $queryValues
+					$queryValues["product_id_$key"] = intval($id);	
+					$queryValues["images_$key"] = $new_file_name;	
+				}
+			}	
+	var_dump($queryValues, $queryString);
+	die();
 	$query = $db->prepare($queryString);
 	return $query->execute($queryValues);	
 }

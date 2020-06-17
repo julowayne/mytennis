@@ -4,7 +4,7 @@ session_start();
 if(isset($_SESSION['viewAdmin'])){
     unset($_SESSION['viewAdmin']);
 }
-print_r($_SESSION);
+
 if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
