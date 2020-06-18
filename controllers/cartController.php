@@ -7,7 +7,8 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
         case 'addProduct' :
-            if(empty($_POST['quantity']) || $_POST['quantity'] < 1 ){
+            $product = getProduct($_GET['product_id']);
+            if(empty($_POST['quantity']) || $_POST['quantity'] < 1 || $_POST['quantity'] > $product['quantity']){
                 $_SESSION['messages'] = ['message' => 'Vous devez choisir une quantité pour ajouter un produit a votre panier', 'type' => 'danger'];
                 header('location:index.php?p=cart&action=display');
                 exit;

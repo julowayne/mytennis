@@ -70,6 +70,7 @@ header nav div:nth-child(5) {
   header nav > #burger {
     display: block;
     margin-right: 60px;
+    margin-top: 5px;
   }
 }
 @media (max-width: 800px) {

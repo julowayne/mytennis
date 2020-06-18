@@ -76,7 +76,8 @@ header {
     nav > #burger  {
       display: block;
       margin-right: 60px;
-    }
+      margin-top: 5px;
+    } 
   }
   }
    
@@ -116,6 +117,9 @@ header {
     nav > #burger  {
       margin-top: 5px;
       margin-right: 10px;
+    }
+    .category-container {
+      
     }
   }
 }
