@@ -20,8 +20,9 @@
             <div>
                 <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/search2.png' : './assets/images/search2.png' ?>" alt="logo recherche"></a>
             </div>
-            <div>
+            <div id="cart">
                 <a href="index.php?p=cart&action=display"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
+                <a href="index.php?p=cart&action=display"><?= count($_SESSION['cart']); ?></a>
             </div> 
             <div>
             <?php if (isset($_SESSION['user'])): ?>
@@ -42,6 +43,7 @@
                             <a href="index.php?p=users&action=disconnected">déconnexion</a>
                             <?php if($_SESSION['user']['is_admin'] == 1): ?>
                             <a href="./admin/index.php?controller=index">Administration</a>
+                            <a href="../index.php?controller=index">Mytennis</a>
                             <?php endif; ?>
                         <?php endif; ?>
                     </div>

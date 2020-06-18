@@ -38,7 +38,7 @@
             <thead>
                 <tr>
                     <th colspan="3">Client</th>
-                    <th>Produit</th>
+                    <th>Date</th>
                     <th>Quantité</th>
                     <th>Prix</th>
                 </tr>
@@ -49,7 +49,7 @@
                     <td><?= $order['lastname'] ?></td>
                     <td><?= $order['firstname'] ?></td>
                     <td><?= $order['address'] ?></td>
-                    <td>Raquette</td>
+                    <td><?= $order['date'] ?></td>
                     <td>15</td>
                     <td>1500</td>
                 </tr>

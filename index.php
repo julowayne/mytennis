@@ -8,7 +8,7 @@ if(isset($_SESSION['viewAdmin'])){
 if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
-require ('helpers.php');
+require('helpers.php');
 require('models/Category.php');
 $categories = getCategories();
 $childCategories = getChildCategories();

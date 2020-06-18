@@ -48,6 +48,12 @@ header nav #burger {
 header nav div:nth-child(5) {
   display: none;
 }
+header nav #cart > a {
+  padding: 0;
+}
+header nav #cart > a:last-child {
+  margin-top: 10px;
+}
 
 @media (max-width: 1200px) {
   header {
@@ -404,6 +410,10 @@ footer a img {
 }
 .category-container div {
   margin-bottom: 1rem;
+}
+.category-container img {
+  width: 100%;
+  height: auto;
 }
 
 /*Liste des produits*/

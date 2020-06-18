@@ -54,6 +54,12 @@ header {
      div:nth-child(5){
       display: none;
     }
+    #cart > a {
+      padding: 0;
+      &:last-child {
+        margin-top: 10px;
+      }
+    }
 	}
 }
 @media(max-width: 1200px) {
@@ -117,9 +123,6 @@ header {
     nav > #burger  {
       margin-top: 5px;
       margin-right: 10px;
-    }
-    .category-container {
-      
     }
   }
 }
@@ -419,6 +422,10 @@ footer {
   }
   div {
     margin-bottom: 1rem;
+  }
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 
