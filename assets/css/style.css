@@ -51,9 +51,6 @@ header nav div:nth-child(5) {
 header nav #cart > a {
   padding: 0;
 }
-header nav #cart > a:last-child {
-  margin-top: 10px;
-}
 
 @media (max-width: 1200px) {
   header {
@@ -112,6 +109,10 @@ header nav #cart > a:last-child {
   header nav > #burger {
     margin-top: 5px;
     margin-right: 10px;
+  }
+
+  footer {
+    position: fixed;
   }
 }
 #logo {
@@ -358,7 +359,7 @@ footer a img {
 .container {
   max-width: 800px;
   min-height: 100%;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   margin: 0 auto;
 }
@@ -378,7 +379,7 @@ footer a img {
   background-color: rgba(117, 190, 218, 0.05);
   max-width: 700px;
   border-radius: 3px;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   padding: 20px;
   margin: 22px auto;
@@ -386,10 +387,15 @@ footer a img {
 }
 .container .article h1 {
   margin: 0 0 0 auto;
+  /* padding: 0; */
+  text-align: left;
+}
+.container .article h1 a {
   padding: 0;
 }
 .container .article p {
   font-size: 1.4rem;
+  margin-left: 15px;
 }
 
 /*Categories*/

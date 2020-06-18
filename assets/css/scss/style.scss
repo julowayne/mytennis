@@ -56,9 +56,6 @@ header {
     }
     #cart > a {
       padding: 0;
-      &:last-child {
-        margin-top: 10px;
-      }
     }
 	}
 }
@@ -124,7 +121,10 @@ header {
       margin-top: 5px;
       margin-right: 10px;
     }
-  }
+}
+footer {
+  position: fixed;
+}
 }
 
 
@@ -372,7 +372,7 @@ footer {
 .container {
   max-width: 800px;
   min-height: 100%;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   margin: 0 auto;
       .success {
@@ -391,17 +391,22 @@ footer {
     background-color: rgba(117, 190, 218, 0.05);
     max-width: 700px;
     border-radius: 3px;
-    text-align: center;
+    text-align: left;
     justify-content: center;
     padding: 20px;
     margin: 22px auto;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 1);
     h1 {
       margin: 0 0 0 auto;
-      padding: 0;
+      /* padding: 0; */
+      text-align: left;
+      a {
+        padding: 0;
+      }
     }
     p {
       font-size: 1.4rem;
+      margin-left: 15px;
     }
   }
 }
