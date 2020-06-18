@@ -29,9 +29,7 @@
     <div class="products-container">
         <?php foreach($productsByCategories as $productsByCategory): ?>
             <?php if($productsByCategory['activated'] == 1): ?>
-                <a class="card" href="index.php?p=products&action=product&id=<?=$productsByCategory['id'] ?>">
-<!--                 <a class="card" href="index.php?p=products&action<?= isset($product) && ($_GET['action']) == 'product' ? '&id='.$productsByCategory['id']  : 'default' ?>">
- -->               
+                <a class="card" href="index.php?p=products&action=product&id=<?=$productsByCategory['id'] ?>">      
                     <div class="product-head">
                     <span><?= $productsByCategory['name'] ?></span>
                     <span><?= $productsByCategory['price'] ?>€</span>    

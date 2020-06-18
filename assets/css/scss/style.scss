@@ -59,6 +59,33 @@ header {
     }
 	}
 }
+@media(max-width: 1300px){
+
+  .filters {
+    width: 300px;
+    position: sticky;
+    top: 20px;
+    background-color: rgba(117, 190, 218, 0.1);
+    border: 1px solid white;
+    margin: 25px auto;
+    padding: 2em;
+    input[type=checkbox]{
+      width: 15px;
+      height: 15px; 
+      cursor: pointer;
+    }
+    h2 {
+      margin: 0;
+    }
+    div {
+      margin-bottom: 1rem;
+      margin-left: 0.6rem;
+    }
+    label {
+      margin-left: 1rem;
+    }
+  }
+}
 @media(max-width: 1200px) {
   header {
     margin: 0;
@@ -82,8 +109,67 @@ header {
       margin-top: 5px;
     } 
   }
+  .products-container{
+    display: flex;
   }
-   
+  .filters {
+    width: 300px;
+    position: sticky;
+    top: 20px;
+    background-color: rgba(117, 190, 218, 0.1);
+    border: 1px solid white;
+    margin: 25px auto;
+    padding: 2em;
+    input[type=checkbox]{
+      width: 15px;
+      height: 15px; 
+      cursor: pointer;
+    }
+    h2 {
+      margin: 0;
+    }
+    div {
+      margin-bottom: 1rem;
+      margin-left: 0.6rem;
+    }
+    label {
+      margin-left: 1rem;
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .filters {
+    width: 300px;
+    position: sticky;
+    top: 20px;
+    max-height: 75vh;
+    background-color: rgba(117, 190, 218, 0.1);
+    border: 1px solid white;
+    margin: 25px auto;
+    padding: 2em;
+    input[type=checkbox]{
+      width: 15px;
+      height: 15px; 
+      cursor: pointer;
+    }
+    h2 {
+      margin: 0;
+    }
+    div {
+      margin-bottom: 1rem;
+      margin-left: 0.6rem;
+    }
+    label {
+      margin-left: 1rem;
+    }
+  }
+}
+@media (max-width: 1000px){
+  .filters {
+    display: none;
+  }
+}
+
 @media(max-width: 800px){
   header {
     justify-content: space-evenly;
@@ -396,13 +482,13 @@ footer {
     padding: 20px;
     margin: 22px auto;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 1);
+    a {
+      padding: 0;
+      font-weight: bold;
+    }
     h1 {
       margin: 0 0 0 auto;
-      /* padding: 0; */
       text-align: left;
-      a {
-        padding: 0;
-      }
     }
     p {
       font-size: 1.4rem;
@@ -446,9 +532,9 @@ footer {
     max-height: 75vh;
     background-color: rgba(117, 190, 218, 0.1);
     border: 1px solid white;
-    margin: 3em auto;
+    margin: 25px auto;
     padding: 2em;
-    input[type="checkbox"]{
+    input[type=checkbox]{
       width: 15px;
       height: 15px; 
       cursor: pointer;
@@ -468,21 +554,25 @@ footer {
     }
   }
   .products-container {
-    max-width: 1200px;
+    max-width: 1100px;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     margin: auto;
     border-radius: 4px;
-    text-align: center;
-    font-size: 10px;
     div {
       box-shadow: 1px 3px 3px 1px black;
       height: 430px;
+      padding: 0;
     }
-    a .card {
+    a {
+      padding: 0;
+      margin: 22px 30px;
+      justify-content: space-evenly;
+    .card {
       cursor: pointer;
-    }
+        }
+      }
     .product-head {
       display: flex;
       flex-direction: row;

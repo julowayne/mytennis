@@ -52,6 +52,32 @@ header nav #cart > a {
   padding: 0;
 }
 
+@media (max-width: 1300px) {
+  .filters {
+    width: 300px;
+    position: sticky;
+    top: 20px;
+    background-color: rgba(117, 190, 218, 0.1);
+    border: 1px solid white;
+    margin: 25px auto;
+    padding: 2em;
+  }
+  .filters input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+  .filters h2 {
+    margin: 0;
+  }
+  .filters div {
+    margin-bottom: 1rem;
+    margin-left: 0.6rem;
+  }
+  .filters label {
+    margin-left: 1rem;
+  }
+}
 @media (max-width: 1200px) {
   header {
     margin: 0;
@@ -74,6 +100,67 @@ header nav #cart > a {
     display: block;
     margin-right: 60px;
     margin-top: 5px;
+  }
+
+  .products-container {
+    display: flex;
+  }
+
+  .filters {
+    width: 300px;
+    position: sticky;
+    top: 20px;
+    background-color: rgba(117, 190, 218, 0.1);
+    border: 1px solid white;
+    margin: 25px auto;
+    padding: 2em;
+  }
+  .filters input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+  .filters h2 {
+    margin: 0;
+  }
+  .filters div {
+    margin-bottom: 1rem;
+    margin-left: 0.6rem;
+  }
+  .filters label {
+    margin-left: 1rem;
+  }
+}
+@media (max-width: 1100px) {
+  .filters {
+    width: 300px;
+    position: sticky;
+    top: 20px;
+    max-height: 75vh;
+    background-color: rgba(117, 190, 218, 0.1);
+    border: 1px solid white;
+    margin: 25px auto;
+    padding: 2em;
+  }
+  .filters input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+  .filters h2 {
+    margin: 0;
+  }
+  .filters div {
+    margin-bottom: 1rem;
+    margin-left: 0.6rem;
+  }
+  .filters label {
+    margin-left: 1rem;
+  }
+}
+@media (max-width: 1000px) {
+  .filters {
+    display: none;
   }
 }
 @media (max-width: 800px) {
@@ -385,13 +472,13 @@ footer a img {
   margin: 22px auto;
   box-shadow: 0 1px 3px 1px black;
 }
+.container .article a {
+  padding: 0;
+  font-weight: bold;
+}
 .container .article h1 {
   margin: 0 0 0 auto;
-  /* padding: 0; */
   text-align: left;
-}
-.container .article h1 a {
-  padding: 0;
 }
 .container .article p {
   font-size: 1.4rem;
@@ -435,7 +522,7 @@ footer a img {
   max-height: 75vh;
   background-color: rgba(117, 190, 218, 0.1);
   border: 1px solid white;
-  margin: 3em auto;
+  margin: 25px auto;
   padding: 2em;
 }
 #product-list .filters input[type=checkbox] {
@@ -457,18 +544,22 @@ footer a img {
   margin-left: 1rem;
 }
 #product-list .products-container {
-  max-width: 1200px;
+  max-width: 1100px;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin: auto;
   border-radius: 4px;
-  text-align: center;
-  font-size: 10px;
 }
 #product-list .products-container div {
   box-shadow: 1px 3px 3px 1px black;
   height: 430px;
+  padding: 0;
+}
+#product-list .products-container a {
+  padding: 0;
+  margin: 22px 30px;
+  justify-content: space-evenly;
 }
 #product-list .products-container a .card {
   cursor: pointer;
