@@ -16,4 +16,5 @@
 </main>	
 <?php require('partials/footer.php'); ?>    
 </body>
+<script type="text/javascript" src="./assets/script/script.js"></script>
 </html>

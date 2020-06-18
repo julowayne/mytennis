@@ -1,5 +1,18 @@
 <header>
+<input id="burger" type="checkbox" />
+
+<label for="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
     <nav>
+    <ul>
+    <?php foreach($categories as $category): ?>
+     <li><a class="dropbtn" href="index.php?p=categories&action=menu&id=<?=$category['id']?>"><?=$category['name']?></a></li>
+     <?php endforeach; ?>
+    
+  </ul>  
         <div id="logo">
             <a href="index.php"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/ball2.png' : './assets/images/ball2.png' ?>" alt="logo Mytennis"></a>
         </div>
@@ -7,13 +20,13 @@
                 <?php foreach($categories as $category): ?>
                     <div class="dropdown">
                         <a class="dropbtn" href="index.php?p=categories&action=menu&id=<?=$category['id']?>"><?=$category['name']?></a>
-                        <div class="dropdown-content">
+                        <!-- <div class="dropdown-content">
                             <?php foreach($childCategories as $childCategory): ?>
                                 <?php if($childCategory['parent_id'] == $category['id']): ?>
                                     <a href="index.php?p=categories&action=menu&id=<?=$childCategory['parent_id']?>"><?=$childCategory['name']?></a>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                        </div>
+                        </div> -->
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -42,8 +55,9 @@
                     </div>
                 </div> 
             </div>
-            <div id="burger">
+           <!--  <div id="burger">
                 <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/open-menu3.png' : './assets/images/open-menu3.png' ?>" alt="menu burger"></a> 
-            </div>
+            </div> -->
     </nav>
 </header>
+

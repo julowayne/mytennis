@@ -7,46 +7,15 @@ function change_tab(name){
     document.getElementById(`tab-content-${name}`).style.display = 'block';
     tab_anc = name;
 }
+/* const content = document.querySelector('#categories');
+const sideBarBody = document.querySelector('#burger-sidebar-body');
+const button = document.querySelector('#burger-button');
+const activatedClass = 'burger-activated';
+sideBarBody.innerHTML = categories.innerHTML;
+let burger = document.querySelector('.burger');
 
-
-/* Ajax pr actualiser info profil front */
-
-/* const profilForm = document.getElementById('profil')
-
-profilForm.addEventListener('click', event => {
-    fetch(`index.php?p=users&action=edit&id=${id}`,{
-        method: "POST",
-        headers: {"Content-Type" : "application/json; charset=UTF-8"
-    }, 
-    body: JSON.stringify({
-        firstname : firstname,
-        lastname : lastname,
-        address : address,
-        email : email
-        })
-    })
-    .then(r => r.json())
-    .then ((data) => {
-        console.log(data)
-        const profilInput = document.querySelector('input')
-    })
-}) */
-
-
-
-/* const modifyUserInformations = async () => {    
-
-    const response = await fetch('./index.php?p=users&action=edit', {
-        method: 'POST', 
-        headers: {"Content-Type" : "application/json; charset=UTF-8"
-    }, 
-        body: JSON.stringify({
-            firstname : firstname,
-            lastname : lastname,
-            address : address,
-            email : email
-
-    })})
-    const json = await response.json()
-    return result  
-} */
+button.addEventListener('click', function(e){
+    e.preventDefault();
+    /* console.log(burger.parentNode); */
+ /*    this.parentNode.classList.add(activatedClass);
+}) */ 

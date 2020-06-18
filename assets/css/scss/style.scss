@@ -30,6 +30,9 @@ a {
     color: orange;
   }
 }
+/*TEST MENU RESPONSIVE */
+
+
 /*Partials*/
 header {
 	nav {
@@ -44,14 +47,102 @@ header {
     #burger  {
       display: none;
     }
-     div:nth-child(5)  {
+     div:nth-child(6){
       display: none;
     }
-
+    #burger-button {
+      cursor: pointer;
+    }
 	}
 }
 @media(max-width: 1200px) {
-  header  {
+  header {
+    input + label {
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      height: 40px;
+      width: 40px; 
+      z-index: 5;
+      span {
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: 50%;
+        margin-top: -1px;
+        left: 0;
+        display: block;
+        background: white;
+        transition: .5s;
+      }
+      span:first-child {
+        top: -5px; 
+      }
+      span:last-child {
+        top: 10px; 
+      }      
+    }
+    label:hover {
+      cursor: pointer;
+    }
+    input:checked + label { 
+      span {
+        opacity: 0;
+        top: 50%;
+      }
+      span:first-child {
+        opacity: 1;
+        transform: rotate(405deg);
+      }
+      span:last-child {
+        opacity: 1;
+        transform: rotate(-405deg);
+      }
+    }
+    input ~ nav {
+      background-color: rgba(0, 0, 0, 0.4);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      z-index: 3;
+      transition: .5s;
+      transition-delay: .5s;
+      overflow: hidden;
+      ul {
+        text-align: center;
+        position: absolute;
+        top: 35%;
+        left: 20%;
+        right: 20%;
+        li {
+          opacity: 0;
+          transition: .5s;
+          transition-delay: 0s;
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 700;
+            font-family: sans-serif;
+            display: block;
+            padding: 30px;
+          }
+        }
+      }
+    }
+    input:checked ~ nav { 
+      height: 100%;
+      transition-delay: 0s;
+      > ul {
+        > li {
+          opacity: 1;
+          transition-delay: .5s;
+        }
+      }
+    } 
     a {
       padding: 0;
       justify-content: space-evenly;
@@ -67,7 +158,8 @@ header {
       margin-right: 60px;
     }
   }
-  }
+}
+   
 @media(max-width: 800px){
   header {
     div {
