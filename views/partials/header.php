@@ -24,7 +24,12 @@
                 <a href="index.php?p=cart&action=display"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
             </div> 
             <div>
+            <?php if (isset($_SESSION['user'])): ?>
                 <a href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/user3.png' : './assets/images/user3.png' ?>" alt="logo panier"></a>
+            <?php endif; ?>
+            <?php if (!isset($_SESSION['user'])): ?>
+                <a href="index.php?p=users&action=form"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/user3.png' : './assets/images/user3.png' ?>" alt="logo panier"></a>
+            <?php endif; ?>
             </div> 
             <div id="account">
             <?php if (!isset($_SESSION['user'])): ?>
