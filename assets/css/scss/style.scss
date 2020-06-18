@@ -97,6 +97,14 @@ header {
     display: none;
   }
 }
+@media(max-width: 700px){
+  footer {
+    a:first-child{
+      display: none;
+    }
+      
+  }
+}
 @media(max-width: 550px){
   header {
     #logo {

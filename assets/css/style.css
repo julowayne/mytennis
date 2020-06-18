@@ -90,6 +90,11 @@ header nav div:nth-child(5) {
     display: none;
   }
 }
+@media (max-width: 700px) {
+  footer a:first-child {
+    display: none;
+  }
+}
 @media (max-width: 550px) {
   header #logo {
     margin-left: 10px;

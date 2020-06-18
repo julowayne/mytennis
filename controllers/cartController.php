@@ -35,7 +35,7 @@ if(isset($_GET['action'])){
             if(!empty($_SESSION['cart'])){ 
                 $cartProducts = getCartProducts(); 
             }
-            if(empty($cartProducts)){
+            else{
                 $_SESSION['messages'] = ['message' => 'Vous n\'avez pas encore ajouté de produit a votre panier', 'type' => 'danger'];
             }
             $view = 'views/cart.php';
