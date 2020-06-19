@@ -1,5 +1,5 @@
 <?php
-
+/* 
 function getAllOrders()
 {
     $db = dbConnect();
@@ -8,7 +8,38 @@ function getAllOrders()
 	$orders =  $query->fetchAll();
 
     return $orders;
+} */
+/* function getAllOrderDetails($id){
+    $db = dbConnect();
+	$query = $db->prepare('
+	SELECT od. *
+	FROM order_details od
+	INNER JOIN orders o ON o.id = od.order_id 
+    WHERE o.user_id = ?
+    GROUP BY order_id');
+   $query->execute([
+		$id
+	]);
+	return $query->fetchAll();
+} */
+
+function getAllOrderDetails($id){
+    $db = dbConnect();
+    $query= $db-> prepare ('SELECT * FROM order_details WHERE order_id = ?');
+    $orderDetails = $query->execute([
+        $id
+    ]);
+    return $query->fetchAll();
 }
+function getAllOrders($id) {
+    $db = dbConnect();
+    $query= $db-> prepare ('SELECT * FROM orders WHERE user_id = ?');
+    $orderDetails = $query->execute([
+        $id
+    ]);
+    return $query->fetchAll();
+}
+
 function uploadOrder(){
     $db = dbConnect();
     $query = $db->prepare('INSERT INTO orders (user_id, address, firstname, lastname ) VALUES (?, ?, ?, ?)');
@@ -22,17 +53,7 @@ function uploadOrder(){
 
     return $order;
 }
-/* function getOrderDetails () {
-    $db = dbConnect();
 
-    $query = $db->query('
-	SELECT c. *
-	FROM categories c
-	INNER JOIN products_categories pc ON c.id = pc.category_id
-	GROUP BY c.id'
-	);
-	return $query->fetchAll();
-} */
 
 function getOrderDetails($orderId, $cartProducts){
     $db = dbConnect();
@@ -41,12 +62,10 @@ function getOrderDetails($orderId, $cartProducts){
     $queryValues = array();
     
 	foreach($cartProducts as $key=>$cartProduct){
-		//génération dynamique de $queryString
 		$queryString .= "(:quantity_$key, :name_$key, :price_$key, :order_id)";
 		if($key != array_key_last($cartProducts)){
 			$queryString .= ',';
         }			
-		//génération dynamique de $queryValues
 		$queryValues["quantity_$key"] = $_SESSION['cart'][$cartProduct['id']];	
         $queryValues["name_$key"] = $cartProduct['name'];	
         $queryValues["price_$key"] = $cartProduct['price'];	

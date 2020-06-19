@@ -135,9 +135,14 @@ if(isset($_GET['action'])){
 						}
 					}
 				}
-				$orders = getAllOrders();
+				$orders = getAllOrders($_GET['id']);
 				$view = 'views/userProfil.php';
 				$pageTitle = "Informations de votre profil";
+			break;
+			case 'orderDetail':
+				$orderDetails = getAllOrderDetails($_GET['id']);
+				$view = 'views/orderDetails.php';
+				$pageTitle = "Détails de la commande";
 			break;	
         default :
 		header('Location:index.php');

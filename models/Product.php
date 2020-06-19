@@ -40,15 +40,3 @@ function getCartProducts(){
 	}
 	return $result;
 }
-/* function getProduct(){
-	$db = dbConnect();
-	foreach $arrayKeys = array_keys($cart);
-	 
-	$queryString = "SELECT *
-	FROM products
-	WHERE product_id IN ()
-	");
-	$queryString .= "(:$_SESSION['cart'][$key])";
-	$query->execute([$id]);
-	return $query->fetchAll();
-} */

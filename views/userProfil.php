@@ -34,13 +34,12 @@
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-        <table id="orders">
+        <table class="orders">
             <thead>
                 <tr>
                     <th colspan="3">Client</th>
                     <th>Date</th>
-                    <th>Quantité</th>
-                    <th>Prix</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,17 +49,10 @@
                     <td><?= $order['firstname'] ?></td>
                     <td><?= $order['address'] ?></td>
                     <td><?= $order['date'] ?></td>
-                    <td>15</td>
-                    <td>1500</td>
+            <?php endforeach; ?>
+                    <td><a href="index.php?p=users&action=orderDetail&id=<?= $order['id'] ?>">Voir le détail</a></td>
                 </tr>
-                <?php endforeach; ?>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="5">Total:</th>
-                    <td>100</td>
-                </tr>
-            </tfoot>
         </table>    
     </div>
 </div>
