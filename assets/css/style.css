@@ -160,6 +160,118 @@ header nav #cart > :first-child {
   .filters label {
     margin-left: 1rem;
   }
+
+  main .product-container p {
+    font-size: 1.5em;
+  }
+  main .product-container h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  main .product-container #stats {
+    margin-top: 0.5rem;
+    font-size: 1em;
+    text-align: center;
+  }
+  main .product-container #price {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 990px) {
+  main .product-container #price {
+    font-size: 4rem;
+    margin-right: 0;
+  }
+}
+@media (max-width: 900px) {
+  main .product-container #description {
+    display: block;
+  }
+  main .product-container p {
+    margin-bottom: 2rem;
+    font-size: 1.5em;
+  }
+  main .product-container h3 {
+    font-size: 1rem;
+  }
+  main .product-container #stats {
+    font-size: 1em;
+    text-align: center;
+  }
+  main .product-container #price {
+    font-size: 4rem;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 880px) {
+  main .product-container h3 {
+    font-size: 1rem;
+  }
+  main .product-container #stats {
+    font-size: 1em;
+    text-align: center;
+  }
+  main .product-container #price {
+    font-size: 3rem;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 860px) {
+  main .product-container {
+    width: 500px;
+    border: 1px solid white;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 2em auto;
+  }
+  main .product-container #product-img {
+    margin: 0 70px;
+    width: 70%;
+  }
+  main .product-container #description {
+    margin: 2em;
+    border: 1px solid white;
+    background-color: rgba(117, 190, 218, 0.1);
+    max-width: 600px;
+    padding: 2em;
+  }
+  main .product-container #description form #quantity {
+    width: 35%;
+  }
+  main .product-container #description input[type=submit] {
+    margin-top: 20px;
+    border: 0;
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+    padding: 9px 0;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    background: white;
+    color: black;
+  }
+  main .product-container #description input[type=submit]:hover, main .product-container #description input[type=submit]:focus {
+    background: orange;
+    color: white;
+  }
+  main .product-container div {
+    display: inline-block;
+  }
+  main .product-container h3 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  main .product-container p {
+    font-size: 1.5em;
+    height: 15vh;
+    margin-bottom: 0;
+  }
+  main .product-container #price {
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+  }
 }
 @media (max-width: 1000px) {
   .filters {
@@ -185,11 +297,6 @@ header nav #cart > :first-child {
 
   #categories {
     display: none;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
   }
 
   footer a:first-child {
@@ -261,6 +368,57 @@ header nav #cart > :first-child {
     left: 12px;
     font-size: 15px;
     text-align: left;
+  }
+  main .product-container {
+    width: 400px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  main .product-container img {
+    width: 100%;
+    text-align: center;
+  }
+  main .product-container #description {
+    margin: 1em;
+    border: 1px solid white;
+    background-color: rgba(117, 190, 218, 0.1);
+    max-width: 600px;
+  }
+  main .product-container #description form #quantity {
+    width: 50%;
+    justify-content: center;
+  }
+  main .product-container #description input[type=submit] {
+    border: 0;
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+    padding: 9px 0;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    background: white;
+    color: black;
+  }
+  main .product-container #description input[type=submit]:hover, main .product-container #description input[type=submit]:focus {
+    background: orange;
+    color: white;
+  }
+  main .product-container div {
+    display: inline-block;
+  }
+  main .product-container h3 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  main .product-container p {
+    font-size: 1em;
+    height: 10vh;
+  }
+  main .product-container #price {
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
   }
 }
 @media (max-width: 550px) {
@@ -728,16 +886,20 @@ footer a img {
   border: 1px solid white;
   display: flex;
   margin: 2em auto;
+  /*   #stats {
+      margin-top: 0.5rem;
+      font-size: 25px;
+      text-align: center;
+    } */
 }
-.product-container img {
+.product-container #product-img {
   padding: 2em;
 }
 .product-container #description {
   margin: 2em;
   border: 1px solid white;
   background-color: rgba(117, 190, 218, 0.1);
-  width: 600px;
-  height: 55vh;
+  max-width: 600px;
   padding: 2em;
 }
 .product-container #description form #quantity {
@@ -768,18 +930,14 @@ footer a img {
   font-size: 20px;
 }
 .product-container p {
-  font-size: 25px;
+  font-size: 1.5em;
   height: 15vh;
   margin-bottom: 0;
 }
-.product-container #stats {
-  margin-top: 0.5rem;
-  font-size: 25px;
-  text-align: center;
-}
 .product-container #price {
-  margin-left: 49px;
-  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
 }
 
 /* Panier*/

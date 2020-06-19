@@ -1,16 +1,15 @@
 <div class="product-container">
     <?php if(isset($_SESSION['messages'])): ?>	
             <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
-	<?php endif; ?>
-    <img src="./admin/assets/images/products/<?= $product['image'] ?>" alt="">
+    <?php endif; ?>
+    <div id="product-img">
+        <img src="./admin/assets/images/products/<?= $product['image'] ?>" alt="">
+    </div>
     <div id="description">
         <h3><?= $product['name'] ?></h3>
         <p>
         <?= $product['short_description'] ?>
         </p>
-        <div id="stats">
-            Quantité disponible :<br><?=$product['quantity'] ?>
-        </div>
         <div id="price">
         <?= $product['price'] ?>€
         </div>
