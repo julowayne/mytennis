@@ -12,6 +12,7 @@ if(isset($_GET['action'])){
                 $cartProducts = getCartProducts(); 
                 $order = uploadOrder();
                 $orderDetails = getOrderDetails($_SESSION['order_id'], $cartProducts);
+                $update = updateProductQuantity($cartProducts);
                 $_SESSION['messages'] = ['message' => 'Votre commande a bien été enregistrée', 'type' => 'success'];
                 unset($_SESSION['cart']);
                 unset($_SESSION['order_id']);

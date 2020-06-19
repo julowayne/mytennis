@@ -6,7 +6,7 @@
     <table id="cart">
         <thead>
             <tr>
-                <th colspan="3">Client</th>
+                <th>Client</th>
                 <th>Produit</th>
                 <th>Quantité</th>
                 <th>Prix</th>
@@ -19,8 +19,6 @@
             <?php foreach ($cartProducts as $product): ?>
             <tr> 
                 <td><?= $_SESSION['user']['lastname'] ?></td>
-                <td><?= $_SESSION['user']['firstname'] ?></td>
-                <td><?= $_SESSION['user']['address'] ?></td>
                 <td><?= $product['name'] ?></td>
                 <td><?= $_SESSION['cart'][$product['id']] ?></td>
                 <td><?= $product['price'] ?> €</td>
@@ -35,12 +33,12 @@
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="7">Total</th>
+                <td colspan="5">Total de la commande</td>
                 <td><?= $total?> €</td>
             </tr>
         </tfoot>
     </table>
-        <form action="index.php?p=orders&action=new" id="validation" method="post">
+    <form action="index.php?p=orders&action=new" id="validation" method="post">
             <input type="submit" value="Valider mon panier">
         </form> 
 </div>

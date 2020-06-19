@@ -36,11 +36,7 @@ function addUser($informations)
 }
 function updateUser($id, $informations){
 	$db = dbConnect();
-	/* if($_SESSION['id'] != $id){
-		return false;
-	}else {
 
-	} */
 
 	$query = $db->prepare("UPDATE users SET firstname = ?, lastname = ?, email = ?, is_admin = ?, address = ? WHERE id = ?");
 	$result = $query->execute([

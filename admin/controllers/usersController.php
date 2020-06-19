@@ -73,7 +73,6 @@ if(isset($_GET['action'])){
 							exit;
 						}
 					}
-					/* $categories = getAllCategories(); */
 					$view = 'views/userForm.php';
 					$pageTitle = "Modification d'un utilisateur";
 				}

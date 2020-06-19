@@ -40,3 +40,18 @@ function getCartProducts(){
 	}
 	return $result;
 }
+function updateProductQuantity($cartProducts) {
+	$db = dbConnect();
+
+
+	foreach($cartProducts as $key => $cartProduct){
+		$query = $db->prepare('UPDATE products SET quantity = quantity - ? WHERE id = ?');
+		$query->execute([
+			
+			$_SESSION['cart'][$cartProduct['id']],
+			$cartProduct['id']
+
+		]);
+	}
+	return $result;
+}

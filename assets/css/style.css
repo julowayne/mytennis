@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-image: url(../images/background.jpg);
   background-attachment: fixed;
@@ -190,10 +191,76 @@ header nav #cart > :first-child {
     width: 100%;
     height: auto;
   }
-}
-@media (max-width: 700px) {
+
   footer a:first-child {
     display: none;
+  }
+
+  main .cart-container #validation {
+    display: block;
+  }
+  main .cart-container #validation input[type=submit] {
+    width: 100%;
+  }
+  main .cart-container a {
+    font-size: 15px;
+  }
+  main .cart-container table, main .cart-container thead, main .cart-container tbody, main .cart-container th, main .cart-container td, main .cart-container tr, main .cart-container tfoot {
+    display: block;
+    font-size: 25px;
+  }
+  main .cart-container thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  main .cart-container tr {
+    border: 1px solid white;
+  }
+  main .cart-container td {
+    border: none;
+    border-bottom: 1px solid white;
+    position: relative;
+    padding-left: 10%;
+  }
+  main .cart-container td:before {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 30%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+  }
+  main .cart-container td:nth-of-type(2):before {
+    content: "Produit :";
+  }
+  main .cart-container td:nth-of-type(3):before {
+    content: "Quantité :";
+  }
+  main .cart-container td:nth-of-type(4):before {
+    content: "Prix :";
+  }
+  main .cart-container td:nth-of-type(5):before {
+    content: "Action :";
+  }
+  main .cart-container td:nth-of-type(6):before {
+    content: "Total :";
+  }
+  main .cart-container tfoot td:nth-of-type(2):before {
+    content: none;
+  }
+}
+@media (max-width: 600px) {
+  main .cart-container td {
+    font-size: 20px;
+  }
+  main .cart-container td:before {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    font-size: 15px;
+    text-align: left;
   }
 }
 @media (max-width: 550px) {
@@ -206,6 +273,29 @@ header nav #cart > :first-child {
   header nav > #burger {
     margin-top: 5px;
     margin-right: 10px;
+  }
+
+  main .cart-container td {
+    font-size: 20px;
+  }
+  main .cart-container td:before {
+    position: absolute;
+    top: 25px;
+    left: 12px;
+    font-size: 15px;
+    text-align: left;
+  }
+}
+@media (max-width: 400px) {
+  main .cart-container td {
+    font-size: 15px;
+  }
+  main .cart-container td:before {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 15px;
+    text-align: left;
   }
 }
 #logo {
@@ -694,16 +784,13 @@ footer a img {
 
 /* Panier*/
 .cart-container {
-  max-width: 1200px;
+  max-width: 710px;
   display: block;
   margin: 2em auto;
   text-align: center;
 }
 .cart-container .hide {
   display: none;
-}
-.cart-container h3 {
-  max-width: 1100px;
 }
 .cart-container .success {
   border: 1px solid white;
@@ -717,9 +804,14 @@ footer a img {
   background-color: orangered;
 }
 .cart-container #cart {
-  max-width: 1100px;
+  max-width: 900px;
   border-collapse: collapse;
-  margin-top: 1em;
+}
+.cart-container #cart thead > tr > td:first-child {
+  columns: 1;
+}
+.cart-container #cart tbody > tr > td:first-child {
+  columns: 1;
 }
 .cart-container #cart tr:nth-child(odd) td {
   background-color: rgba(0, 0, 0, 0.3);
@@ -741,12 +833,12 @@ footer a img {
 .cart-container #validation {
   display: flex;
   justify-content: flex-end;
-  max-width: 1100px;
 }
 .cart-container #validation input[type=submit] {
+  width: 40%;
   margin-top: 20px;
   border: 0;
-  width: 30%;
+  max-width: 100%;
   outline: none;
   border-radius: 2px;
   padding: 9px 0;
