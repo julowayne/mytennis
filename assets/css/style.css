@@ -18,7 +18,6 @@ a {
   text-decoration: none;
   cursor: pointer;
   font-size: x-large;
-  letter-spacing: 2px;
   color: white;
 }
 a:hover {
@@ -48,8 +47,11 @@ header nav #burger {
 header nav div:nth-child(5) {
   display: none;
 }
-header nav #cart > a {
+header nav #cart > :first-child {
+  display: block;
+  flex-direction: row;
   padding: 0;
+  font-size: 15px;
 }
 
 @media (max-width: 1300px) {
@@ -167,18 +169,26 @@ header nav #cart > a {
   header {
     justify-content: space-evenly;
   }
-  header nav > #account {
+  header nav #account {
     display: none;
   }
-  header nav > div:last-child {
+  header nav div:last-child {
     display: block;
   }
-  header nav > div:nth-child(5) {
+  header nav div:nth-child(5) {
     display: block;
+  }
+  header nav #cart > :first-child {
+    display: none;
   }
 
   #categories {
     display: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 @media (max-width: 700px) {
@@ -196,10 +206,6 @@ header nav #cart > a {
   header nav > #burger {
     margin-top: 5px;
     margin-right: 10px;
-  }
-
-  footer {
-    position: fixed;
   }
 }
 #logo {
@@ -221,12 +227,13 @@ header nav #cart > a {
 }
 #account .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 #account .dropdown-content {
   display: none;
   position: absolute;
-  min-width: 210px;
+  min-width: 160px;
+  text-align: left;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -249,7 +256,6 @@ header nav #cart > a {
   background-color: none;
 }
 #account .dropdown:hover .dropbtn {
-  justify-content: space-between;
   text-decoration: none;
   cursor: pointer;
   letter-spacing: 2px;
@@ -449,6 +455,9 @@ footer a img {
   text-align: left;
   justify-content: center;
   margin: 0 auto;
+}
+.container h3 {
+  text-align: center;
 }
 .container .success {
   border: 1px solid white;

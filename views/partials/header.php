@@ -21,8 +21,8 @@
                 <a href=""><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/search2.png' : './assets/images/search2.png' ?>" alt="logo recherche"></a>
             </div>
             <div id="cart">
-                <a href="index.php?p=cart&action=display"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
                 <a href="index.php?p=cart&action=display"><?= count($_SESSION['cart']); ?></a>
+                <a href="index.php?p=cart&action=display"><img src="<?= isset($_SESSION['viewAdmin']) ? '../assets/images/cart2.png' : './assets/images/cart2.png' ?>" alt="logo panier"></a>
             </div> 
             <div>
             <?php if (isset($_SESSION['user'])): ?>
@@ -37,7 +37,7 @@
                 <a class="dropbtn" href="index.php?p=users&action=form">Compte</a>
             <?php endif; ?>
                 <div class="dropdown">
-                <?php if (isset($_SESSION['user'])): ?>
+                 <?php if (isset($_SESSION['user'])): ?>
                     <a class="dropbtn" href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>"><?= $_SESSION['user']['firstname'] ?></a>
                     <div class="dropdown-content">
                             <a href="index.php?p=users&action=disconnected">déconnexion</a>

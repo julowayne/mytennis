@@ -8,11 +8,13 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
         case 'new' :
-           /*  $_SESSION['cart'] [$_GET['product_id']] = $_POST['quantity']; */
             if(isset($_SESSION['user']) && !empty($_SESSION['cart'])){
+                $cartProducts = getCartProducts(); 
                 $order = uploadOrder();
+                $orderDetails = getOrderDetails($_SESSION['order_id'], $cartProducts);
                 $_SESSION['messages'] = ['message' => 'Votre commande a bien été enregistrée', 'type' => 'success'];
                 unset($_SESSION['cart']);
+                unset($_SESSION['order_id']);
                 header('location:index.php?p=users&action=edit&id='. $_GET['id']);
                 exit;
             }

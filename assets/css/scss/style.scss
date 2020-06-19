@@ -23,7 +23,6 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 	font-size: x-large;
-	letter-spacing: 2px;
 	color: white;
 	&:hover {
 		text-decoration: none;
@@ -54,11 +53,15 @@ header {
      div:nth-child(5){
       display: none;
     }
-    #cart > a {
+    #cart > :first-child{
+      display: block;
+      flex-direction: row;
       padding: 0;
+      font-size: 15px;
+    }
+      
     }
 	}
-}
 @media(max-width: 1300px){
 
   .filters {
@@ -173,18 +176,28 @@ header {
 @media(max-width: 800px){
   header {
     justify-content: space-evenly;
-    nav > #account {
-      display: none;
-    }
-    nav > div:last-child{
-      display: block;
-    }
-    nav > div:nth-child(5){
-      display: block;
-    }
+    nav {
+      #account {
+        display: none;
+      }
+      div:last-child{
+        display: block;
+      }
+      div:nth-child(5){
+        display: block;
+      }
+   
+      #cart > :first-child{
+        display: none;
+      }
+    } 
   }
   #categories  {
     display: none;
+  }
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 @media(max-width: 700px){
@@ -207,10 +220,7 @@ header {
       margin-top: 5px;
       margin-right: 10px;
     }
-}
-footer {
-  position: fixed;
-}
+  }
 }
 
 
@@ -236,12 +246,13 @@ footer {
   }  
   .dropdown {
     position: relative;
-    display: inline-block;
+    display:block;
   }
   .dropdown-content {
     display: none;
     position: absolute;
-    min-width: 210px;
+    min-width: 160px;
+    text-align: left;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
@@ -264,7 +275,6 @@ footer {
     background-color: none;
   } 
   .dropdown:hover .dropbtn {
-    justify-content: space-between;
     text-decoration: none;
     cursor: pointer;
     letter-spacing: 2px;
@@ -461,6 +471,9 @@ footer {
   text-align: left;
   justify-content: center;
   margin: 0 auto;
+  h3 {
+    text-align: center;
+  }
       .success {
         border: 1px solid white;
         padding: 0.5rem;
