@@ -1,7 +1,7 @@
 <div class="container">
 <?php if(isset($_SESSION['messages'])): ?>	
             <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
-	<?php endif; ?>
+    <?php endif; ?>
     <div class="article">
         <h1><a href="">Nouveautés</a></h1>
         <p>Le club organise le tournois régional 2021, inscrivez-vous ! L'accueil reste a votre disposition pour toute information.</p>

@@ -63,7 +63,12 @@ if(isset($_GET['action'])){
 								'is_admin' => $user['is_admin'],
 								'id' => $user['id'],
 						];
-						$_SESSION['messages'] = $user ? ['message' => 'Vous êtes connecté sur MyTennis!', 'type' => 'success'] : ['message' => 'Identifiants incorrects', 'type' => 'danger'];
+						$_SESSION['messages'] = ['message' => 'Vous êtes connecté sur MyTennis!', 'type' => 'success']; 
+						header('location:index.php');
+						exit;
+					}
+					else {
+						$_SESSION['messages'] =	['message' => 'Identifiants incorrects', 'type' => 'danger'];
 						header('location:index.php');
 						exit;
 					}

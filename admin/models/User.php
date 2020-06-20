@@ -27,7 +27,7 @@ function addUser($informations)
         'firstname' => $informations['firstname'],
         'lastname' => $informations['lastname'],
 		'email' => $informations['email'],
-		'password' => $informations['password'],
+		'password' => hash('md5', $informations['password']),
 		'is_admin' => $informations['is_admin'],
 		'address' => $informations['address'],
 	]);
@@ -64,10 +64,6 @@ function deleteUser($id)
 	$query->execute([
 		$id,
 	]);
-	/* $result = $query->fetch();
-	if(!empty($result)){
-		unlink('../assets/images/products/'. $result['image']);
-	} */
 	
 	$query = $db->prepare('DELETE FROM users WHERE id = ?');
 	$result = $query->execute([$id]);

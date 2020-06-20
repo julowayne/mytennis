@@ -49,8 +49,8 @@
                     <td><?= $order['firstname'] ?></td>
                     <td><?= $order['address'] ?></td>
                     <td><?= $order['date'] ?></td>
-            <?php endforeach; ?>
                     <td><a href="index.php?p=users&action=orderDetail&id=<?= $order['id'] ?>">Voir le détail</a></td>
+            <?php endforeach; ?>
                 </tr>
             </tbody>
         </table>    

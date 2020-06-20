@@ -8,12 +8,14 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'list' :
-            $orders = getAllOrders();
+			$orders = getAllOrders();
+			$orderTotal = getOrderTotal();
 			$view = 'views/orderList.php';
 			$pageTitle = "Liste de toutes les commandes";
 			break;
 		case 'details' :
 			$order = getOrder($_GET['id']);
+			$orderTotal = getOrderTotal();
 			$view = 'views/OrderDetails.php';
 			$pageTitle = "Détails de la commande";
 			break;

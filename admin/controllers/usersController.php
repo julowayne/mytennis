@@ -19,9 +19,9 @@ if(isset($_GET['action'])){
 			$pageTitle = "Ajout d'un utilisateur";
 			break;
 		case 'add' :
-			if(!empty($_POST['firstname']['lastname']['email']['password']['is_admin'])){
-				if(empty($_POST['firstname']['lastname']['email']['password']['is_admin'])){
-					$_SESSION['messages'][] = 'Tout les champs sont obligatoires pour créer un nouvel utilisateur !';
+			if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['password'])){
+				if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['password'])){
+					$_SESSION['messages'] = ['message' => 'Tout les champs sont obligatoires pour créer un nouvel utilisateur', 'type' => 'danger'];
 				}
 				
 				$_SESSION['old_inputs'] = $_POST;
@@ -29,6 +29,9 @@ if(isset($_GET['action'])){
 				exit;
 			}
 			else{
+				if(empty($_POST['is_admin'])){
+					$_POST['is_admin'] = 0;
+				}
 				$resultAdd = addUser($_POST);
 				
 				$_SESSION['messages'] = $resultAdd ? ['message' => 'Vous avez ajouté un utilisateur', 'type' => 'success'] : ['message' => 'Erreur lors de l\'ajout de l\' utilisateur', 'type' => 'danger'];
@@ -42,7 +45,7 @@ if(isset($_GET['action'])){
 				if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['address'])){
 					if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['address'])){
 
-						$_SESSION['messages'][] = 'Tout les champs sont obligatoires pour modifier un utilisateur !';
+						$_SESSION['messages'] = ['message' => 'Tout les champs sont obligatoires pour modifier un utilisateur', 'type' => 'danger'];
 					}
 						$_SESSION['old_inputs'] = $_POST;
 						header('Location:index.php?controller=users&action=edit&id='.$_GET['id']);

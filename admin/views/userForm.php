@@ -1,12 +1,10 @@
 <div class="col text-left">
 	<h3>Formulaire des utilisateurs</h3>
-<!-- 	<?php if(isset($_SESSION['messages'])): ?>
-		<div>
-			<?php foreach($_SESSION['messages'] as $message): ?>
-				<?= $message ?><br>
-			<?php endforeach; ?>
-		</div>
-	<?php endif; ?> -->
+	<?php if(isset($_SESSION['messages'])): ?>
+		<h2>
+            <div class="alert alert-<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></div>
+		</h2>
+	<?php endif; ?>
 	<form class="form-group col-4" action="index.php?controller=users&action=<?= isset($user) || (isset($_SESSION['old_inputs']) && $_GET['action'] == 'edit') ? 'edit&id='.$_GET['id'] : 'add' ?>" method="post" enctype="multipart/form-data">
         <label for="firstname">Prénom :</label><br>
 		<input class="form-control" type="text" name="firstname" id="firstname" value="<?= isset($user) ? $user['firstname'] : '' ?><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['firstname'] : '' ?>" /><br>

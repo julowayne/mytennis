@@ -33,9 +33,9 @@
                  <?php if (isset($_SESSION['user'])): ?>
                     <a class="dropbtn" href="index.php?p=users&action=edit&id=<?= $_SESSION['user']['id'] ?>"><?= $_SESSION['user']['firstname'] ?></a>
                     <div class="dropdown-content">
-                            <a href="index.php?p=users&action=disconnected">déconnexion</a>
+                            <a href="index.php?p=users&action=disconnected">Déconnexion</a>
                             <?php if($_SESSION['user']['is_admin'] == 1): ?>
-                            <a href="./admin/index.php?controller=index">Administration</a>
+                            <a href="admin/index.php?controller=index">Administration</a>
                             <a href="../index.php?controller=index">Mytennis</a>
                             <?php endif; ?>
                         <?php endif; ?>

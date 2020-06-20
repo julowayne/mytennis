@@ -1,11 +1,9 @@
 <div class="col text-left">
 	<h3>Formulaire du produit</h3>
 	<?php if(isset($_SESSION['messages'])): ?>
-		<div>
-			<?php foreach($_SESSION['messages'] as $message): ?>
-				<?= $message ?><br>
-			<?php endforeach; ?>
-		</div>
+		<h2>
+            <div class="alert alert-<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></div>
+		</h2>
 	<?php endif; ?>
 	<form class="form-group col-4" action="index.php?controller=products&action=<?= isset($product) || (isset($_SESSION['old_inputs']) && $_GET['action'] == 'edit') ? 'edit&id='.$_GET['id'] : 'add' ?>" method="post" enctype="multipart/form-data">
 		

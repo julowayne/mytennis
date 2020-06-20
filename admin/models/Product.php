@@ -58,9 +58,9 @@ function addProduct($informations)
 			]);		
 		}
 	}	
-	if($result && !empty($_FILES['images']['tmp_name'])){
+/* 	if($result && !empty($_FILES['images']['tmp_name'])){
 		$result = uploadMulitpeImages($productId);
-	}
+	} */
 	return $result;
 }
 
@@ -108,9 +108,9 @@ function updateProduct($id, $informations){
 			]);		
 		}
 	}
-	if($result && !empty($_FILES['images']['tmp_name'])){
+/* 	if($result && !empty($_FILES['images']['tmp_name'])){
 		$result = uploadMulitpeImages($productId);
-	}
+	} */
 	return $result;
 }
 
@@ -174,7 +174,7 @@ function deleteProduct($id)
 	]);
 	$result = $query->fetch();
 	if(!empty($result)){
-		unlink('../assets/images/products/'. $result['image']);
+		unlink('./assets/images/products/'. $result['image']);
 	}
 	
 	$query = $db->prepare('DELETE FROM products WHERE id = ?');
@@ -197,7 +197,7 @@ function getProduct($id){
 	return $query->fetch();
 }
 
-function uploadMulitpeImages($id){
+/* function uploadMulitpeImages($id){
 
 	
 	$db = dbConnect();
@@ -223,8 +223,8 @@ function uploadMulitpeImages($id){
 			$queryValues["images_$key"] = $new_file_name;	
 		}
 	}	
-	/* var_dump($queryValues, $queryString);
-	die(); */
+	var_dump($queryValues, $queryString);
+	die();
 	$query = $db->prepare($queryString);
 	return $query->execute($queryValues);	
-}
+} */

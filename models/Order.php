@@ -1,27 +1,4 @@
 <?php
-/* 
-function getAllOrders()
-{
-    $db = dbConnect();
-
-    $query = $db->query('SELECT * FROM orders');
-	$orders =  $query->fetchAll();
-
-    return $orders;
-} */
-/* function getAllOrderDetails($id){
-    $db = dbConnect();
-	$query = $db->prepare('
-	SELECT od. *
-	FROM order_details od
-	INNER JOIN orders o ON o.id = od.order_id 
-    WHERE o.user_id = ?
-    GROUP BY order_id');
-   $query->execute([
-		$id
-	]);
-	return $query->fetchAll();
-} */
 
 function getAllOrderDetails($id){
     $db = dbConnect();
@@ -53,7 +30,6 @@ function uploadOrder(){
 
     return $order;
 }
-
 
 function getOrderDetails($orderId, $cartProducts){
     $db = dbConnect();

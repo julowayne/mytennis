@@ -18,11 +18,12 @@ if(isset($_GET['action'])){
 			$pageTitle = "Ajout d'une catégorie";
 			break;
 		case 'add' :
-			if(empty($_POST['name']) && isset($_POST['image'])){
-				if(empty($_POST['name']) && isset($_POST['image'])){
+			if(!empty($_POST['name']) || empty($_FILES['image'])){
+				if(empty($_POST['name']) || empty($_FILES['image'])){
 					/* var_dump($_POST);
 					die(); */
-					$_SESSION['messages'][] = 'Les champs NOM & IMAGE sont obligatoires pour ajouter une nouvelle catégorie !';
+					$_SESSION['messages'] = ['message' => 'Les champs NOM & IMAGE sont obligatoires pour ajouter une nouvelle catégorie', 'type' => 'danger'];
+
 				}
 				$_SESSION['old_inputs'] = $_POST;
 				header('Location:index.php?controller=categories&action=new');
