@@ -6,7 +6,9 @@
     <table id="cart">
         <thead>
             <tr>
+                <?php if(isset($_SESSION['user'])): ?>
                 <th>Client</th>
+                <?php endif?>
                 <th>Produit</th>
                 <th>Quantité</th>
                 <th>Prix</th>
@@ -18,7 +20,9 @@
             <?php if(isset($cartProducts)): ?>
             <?php foreach ($cartProducts as $product): ?>
             <tr> 
+            <?php if(isset($_SESSION['user'])): ?>
                 <td><?= $_SESSION['user']['lastname'] ?></td>
+                <?php endif?>
                 <td><?= $product['name'] ?></td>
                 <td><?= $_SESSION['cart'][$product['id']] ?></td>
                 <td><?= $product['price'] ?> €</td>
@@ -33,7 +37,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="5">Total de la commande</td>
+                <td colspan="<?= isset($_SESSION['user']) ? '5' : '4'; ?>">Total de la commande</td>
                 <td><?= $total?> €</td>
             </tr>
         </tfoot>

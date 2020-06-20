@@ -2,7 +2,7 @@
     <?php if(isset($_SESSION['messages'])): ?>	
             <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
     <?php endif; ?>
-    <div id="product-img">
+    <div id="product-img" class="zoom">
         <img src="./admin/assets/images/products/<?= $product['image'] ?>" alt="">
     </div>
     <div id="description">
