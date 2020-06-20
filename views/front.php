@@ -17,6 +17,9 @@
         <?php endif; ?>
         <a href="index.php?p=users&action=disconnected">Déconnexion</a>
     <?php endif; ?>
+    <?php if (!isset($_SESSION['user'])): ?>
+        <a class="responsive-profil" href="index.php?p=users&action=form">Compte</a>
+    <?php endif; ?>
     </div>
 <?php
 	require $view;

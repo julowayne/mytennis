@@ -7,11 +7,10 @@
 
 body {
 	background-image: url(../images/background.jpg);
-	background-attachment: fixed;
+  background-attachment: fixed;
 	font-family: "Roboto", sans-serif;
   color: white;
   margin: 0;
-  min-height: 100vh;
 }
 *, *:before, *:after {
   box-sizing: border-box;
@@ -43,6 +42,7 @@ header {
 		display: flex;
 		justify-content: space-between;
     align-items: center;
+    min-height: 5vh;
     #burger  {
       display: none;
     }
@@ -155,7 +155,7 @@ header {
 }
 main {
   max-width: 1600px;
-  min-height: 81vh;
+  min-height: 95vh;
   margin: auto;
   padding: 30px;
   .responsive-profil {
@@ -239,7 +239,7 @@ footer {
               border-color:orange;
           }
       }
-      input[type="checkbox"]{
+      input[type=checkbox]{
         width: 15px;
         height: 15px; 
         cursor: pointer;
@@ -268,22 +268,22 @@ footer {
         margin-bottom: 1rem;;
       }
     }
-      button, input[type=submit] {
-        border:0;
-        width: 100%;
-        outline:none;
-        border-radius:0;
-        padding:10px 0;
-        font-size:2rem;
-        letter-spacing:.1em;
-        cursor: pointer;
-        background:white;
-        color:black;
-        &:hover, &:focus {
-          background:orange;
-          color:white
-        }
+    button, input[type=submit] {
+      border:0;
+      width: 100%;
+      outline:none;
+      border-radius:0;
+      padding:10px 0;
+      font-size:2rem;
+      letter-spacing:.1em;
+      cursor: pointer;
+      background:white;
+      color:black;
+      &:hover, &:focus {
+        background:orange;
+        color:white
       }
+    }
   }
  /*Accueil*/ 
 .container {
@@ -295,18 +295,18 @@ footer {
   h3 {
     text-align: center;
   }
-      .success {
-        border: 1px solid white;
-        padding: 0.5rem;
-        background-color: orange;
-        color: white;
-      }
-      .danger {
-        border: 1px solid white;
-        padding: 0.5rem;
-        background-color: orangered;
-      }
-  .article{
+  .success {
+    border: 1px solid white;
+    padding: 0.5rem;
+    background-color: orange;
+    color: white;
+  }
+  .danger {
+    border: 1px solid white;
+    padding: 0.5rem;
+    background-color: orangered;
+  }
+  .article {
     border: 1px solid white;
     background-color: rgba(117, 190, 218, 0.05);
     max-width: 700px;
@@ -360,7 +360,6 @@ footer {
   flex-direction: row;
   .filters {
     max-width: 200px;
-    position: -webkit-sticky;
     position: sticky;
     top: 20px;
     max-height: 75vh;
@@ -434,7 +433,7 @@ footer {
     justify-content: center;
     padding: 30px;
     margin:20px auto;
-    box-shadow:0 1px 3px 1px rgba($color: black, $alpha: .3);
+    box-shadow:0 1px 3px 1px rgba(black, .3); 
     .orders {
       margin-top: 1em;
       border: 1px solid white;
@@ -1072,8 +1071,6 @@ footer {
       } 
       #description {
        margin-top: 1rem;
-       border: 1px solid white;
-       background-color: rgba(117, 190, 218, 0.1);
        width: 300px; 
        padding: 1em;
        form {
@@ -1081,23 +1078,9 @@ footer {
            width: 35%;
          }
        }
-       }
-       div {
-         display: inline-block;
-       }
-       h3 {
-         margin-top: 0;
-         font-size: 20px;
-       }
-       #price {
-         margin-left: 30px;
-         font-size: 2rem;
-       }
       }
+    }
   }
-}
-@media (max-width: 420px) {
-  
 }
 @media (max-width: 400px) {
   main {

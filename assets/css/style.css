@@ -5,7 +5,6 @@ body {
   font-family: "Roboto", sans-serif;
   color: white;
   margin: 0;
-  min-height: 100vh;
 }
 
 *, *:before, *:after {
@@ -39,6 +38,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 5vh;
 }
 header nav #burger {
   display: none;
@@ -149,7 +149,7 @@ header #account .dropdown:hover .dropbtn {
 
 main {
   max-width: 1600px;
-  min-height: 81vh;
+  min-height: 95vh;
   margin: auto;
   padding: 30px;
 }
@@ -359,7 +359,6 @@ footer a img {
 }
 #product-list .filters {
   max-width: 200px;
-  position: -webkit-sticky;
   position: sticky;
   top: 20px;
   max-height: 75vh;
@@ -1025,24 +1024,11 @@ footer a img {
   }
   main .product-container #description {
     margin-top: 1rem;
-    border: 1px solid white;
-    background-color: rgba(117, 190, 218, 0.1);
     width: 300px;
     padding: 1em;
   }
   main .product-container #description form #quantity {
     width: 35%;
-  }
-  main .product-container div {
-    display: inline-block;
-  }
-  main .product-container h3 {
-    margin-top: 0;
-    font-size: 20px;
-  }
-  main .product-container #price {
-    margin-left: 30px;
-    font-size: 2rem;
   }
 }
 @media (max-width: 400px) {
