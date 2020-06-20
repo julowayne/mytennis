@@ -57,80 +57,70 @@ header {
     }   
     }
     #logo {
-  margin-left: 40px;
-}
-#account {
-  .dropbtn {
-    justify-content: space-between;
-    text-decoration: none;
-    margin-right: 60px;
-    cursor: pointer;
-    font-size: x-large;
-    letter-spacing: 2px;
-    color: white;
-    &:hover {
-      text-decoration: none;
-      color: orange;
+      margin-left: 40px;
     }
-  }  
-  .dropdown {
-    position: relative;
-    display:block;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    text-align: left;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    background:rgba(darkgrey,0.5); 
-    display: block;
-    &:hover {
+  #account {
+    .dropbtn {
+      justify-content: space-between;
       text-decoration: none;
-      color: orange;
+      margin-right: 60px;
+      cursor: pointer;
+      font-size: x-large;
+      letter-spacing: 2px;
+      color: white;
+      &:hover {
+        text-decoration: none;
+        color: orange;
+      }
+    }  
+    .dropdown {
+      position: relative;
+      display:block;
     }
-  }
-  .dropdown-content a:hover {
-    background-color:white;
-  }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      text-align: left;
+      box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      background:rgba(darkgrey,0.5); 
+      display: block;
+      &:hover {
+        text-decoration: none;
+        color: orange;
+        background-color:white;
+      }
+    }
     .dropdown:hover .dropdown-content {
-    display: block;
-    background-color: none;
-  } 
-  .dropdown:hover .dropbtn {
-    text-decoration: none;
-    cursor: pointer;
-    letter-spacing: 2px;
-    color: white;
-    &:hover {
+      display: block;
+      background-color: none;
+    } 
+    .dropdown:hover .dropbtn {
       text-decoration: none;
-      color: orange;
+      cursor: pointer;
+      letter-spacing: 2px;
+      color: white;
     }
   }
 }
-	}
 
 #categories {
   justify-content: center;
   .dropdown {
     position: relative;
     display: inline-block;
-    &:hover {
-      transform: scale(1.1);
-    }
   }
   .dropdown-content {
     display: none;
     position: absolute;
     min-width: 210px;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-    z-index: 1;
   }
   .dropdown-content a {
     color: white;
@@ -175,7 +165,6 @@ main {
 footer {
   display: flex;
   justify-content: space-around;
-  top:97vh;
   width: 100%;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.2);
@@ -200,7 +189,7 @@ footer {
     justify-content: center;
     padding: 30px;
     margin:20px auto;
-    box-shadow:0 1px 3px 1px rgba($color: black, $alpha: .3); 
+    box-shadow:0 1px 3px 1px rgba(black, .5); 
     .headform{
         list-style:none;
         padding:0;
@@ -215,14 +204,13 @@ footer {
         text-decoration:none;
         padding:15px;
         background:rgba(lightgrey,.25);
-        color:lightgrey-light;
         font-size:20px;
         float:left;
         width:50%;
         text-align:center;
         cursor:pointer;
         transition:.5s ease;
-        box-shadow:0 1px 3px 1px rgba($color: black, $alpha: .3); 
+        box-shadow:0 1px 3px 1px rgba(black, .3); 
         &:hover {
           background:white;
           color:orange;
@@ -244,7 +232,7 @@ footer {
         border:1px solid lightgrey;
         color:white;
         border-radius:0;
-        box-shadow:0 1px 1px 1px rgba($color: black, $alpha: .3); 
+        box-shadow:0 1px 3px 1px rgba(black, .3); 
         transition:border-color .25s ease, box-shadow .25s ease;
         &:focus {
               outline:0;
@@ -256,7 +244,6 @@ footer {
         height: 15px; 
         cursor: pointer;
       }
-     
       label {
         display: flex;
         text-align: left;

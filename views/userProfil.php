@@ -37,7 +37,7 @@
         <table class="orders">
             <thead>
                 <tr>
-                    <th colspan="3">Client</th>
+                    <th colspan="3">Informations</th>
                     <th>Date</th>
                     <th>Details</th>
                 </tr>

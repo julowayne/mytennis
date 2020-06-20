@@ -90,8 +90,6 @@ header #account .dropdown-content a {
 header #account .dropdown-content a:hover {
   text-decoration: none;
   color: orange;
-}
-header #account .dropdown-content a:hover {
   background-color: white;
 }
 header #account .dropdown:hover .dropdown-content {
@@ -104,10 +102,6 @@ header #account .dropdown:hover .dropbtn {
   letter-spacing: 2px;
   color: white;
 }
-header #account .dropdown:hover .dropbtn:hover {
-  text-decoration: none;
-  color: orange;
-}
 
 #categories {
   justify-content: center;
@@ -116,15 +110,11 @@ header #account .dropdown:hover .dropbtn:hover {
   position: relative;
   display: inline-block;
 }
-#categories .dropdown:hover {
-  transform: scale(1.1);
-}
 #categories .dropdown-content {
   display: none;
   position: absolute;
   min-width: 210px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 #categories .dropdown-content a {
   color: white;
@@ -170,7 +160,6 @@ main .responsive-profil {
 footer {
   display: flex;
   justify-content: space-around;
-  top: 97vh;
   width: 100%;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.2);
@@ -196,7 +185,7 @@ footer a img {
   justify-content: center;
   padding: 30px;
   margin: 20px auto;
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
 .form .headform {
   list-style: none;
@@ -213,7 +202,6 @@ footer a img {
   text-decoration: none;
   padding: 15px;
   background: rgba(211, 211, 211, 0.25);
-  color: lightgrey-light;
   font-size: 20px;
   float: left;
   width: 50%;
@@ -242,7 +230,7 @@ footer a img {
   border: 1px solid lightgrey;
   color: white;
   border-radius: 0;
-  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .form .signup-content input:focus {
