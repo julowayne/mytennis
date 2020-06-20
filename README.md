@@ -20,14 +20,14 @@ There are some simple rules :
 - you have to an admin to get to the administration part.
 - As an administrator : you have access to users/categories/products/orders and you can update/delete or add in any of them.
 
-#Done with
+# Done with
 - PhP
 - JavaScript
 - MySQL
 - SASS
 - Bootstrap (only for the back office part)
 
-#Contact 
+# Contact 
  - linkedin : [Thomas Desessarts Jules](https://www.linkedin.com/in/jules-td/)
  - thomas.desessarts-jules@hotmail.com
  - [Portfolio](https://jules-td.netlify.app/)
