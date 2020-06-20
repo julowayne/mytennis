@@ -48,7 +48,7 @@
                     <td><?= $order['lastname'] ?></td>
                     <td><?= $order['firstname'] ?></td>
                     <td><?= $order['address'] ?></td>
-                    <td><?= $order['date'] ?></td>
+                    <td><?= date('d/m/Y',strtotime($order['date'])) ?></td>
                     <td><a href="index.php?p=users&action=orderDetail&id=<?= $order['id'] ?>">Voir le détail</a></td>
             <?php endforeach; ?>
                 </tr>

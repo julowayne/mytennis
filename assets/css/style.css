@@ -459,6 +459,9 @@ footer a img {
   padding: 1em;
   border: 1px solid white;
 }
+.profil-container .orders-form .orders tr:nth-child(odd) td {
+  background-color: rgba(0, 0, 0, 0.4);
+}
 .profil-container .orders-form .orders td a:last-child {
   padding: 0;
   justify-content: center;
@@ -1055,6 +1058,9 @@ footer a img {
   }
 }
 @media (max-width: 400px) {
+  main .products-container {
+    width: 50%;
+  }
   main .cart-container td {
     font-size: 15px;
   }

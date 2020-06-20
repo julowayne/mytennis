@@ -35,7 +35,7 @@
                     <div class="dropdown-content">
                             <a href="index.php?p=users&action=disconnected">Déconnexion</a>
                             <?php if($_SESSION['user']['is_admin'] == 1): ?>
-                            <a href="admin/index.php?controller=index">Administration</a>
+                            <a href="admin/index.php?controller=products&action=list">Administration</a>
                             <a href="../index.php?controller=index">Mytennis</a>
                             <?php endif; ?>
                         <?php endif; ?>
