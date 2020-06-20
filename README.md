@@ -5,6 +5,7 @@ It's my end of year school project where i had to do a e-shop. I decided to do a
 - Get the repository
 - get your local server running
 - import the db
+
 here are some users information :
   - admin max@admin.com password : maxime
   - user test@user.com password : user
