@@ -21,6 +21,8 @@ if(isset($_GET['action'])){
             }
             else {
                 $_SESSION['messages'] = ['message' => 'Vous devez être connecté pour passer une commande', 'type' => 'danger'];
+                header('location:index.php');
+                exit;
             }
 			break;
         case 'view' :

@@ -1,3 +1,6 @@
+<?php if(isset($_SESSION['messages'])): ?>	
+            <h3 class="<?=$_SESSION['messages']['type']?>"><?= $_SESSION['messages']['message'] ?></h3>		
+	<?php endif; ?>
 <div class="form">
     <ul class="headform">
         <li class="tab" id="tab-inscription" onclick="javascript:change_tab('inscription')">Inscription</li>
@@ -35,5 +38,3 @@
         </div>
     </div>
 </div>
-<!-- <script type="text/javascript" src="./assets/script/script.js"></script>
- -->

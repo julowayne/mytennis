@@ -32,18 +32,12 @@ if(isset($_GET['action'])){
 						'is_admin' => $user['is_admin'],
 						'id' => $user['id'],
 					];
-					/* $_SESSION['messages'][] = 'Vous êtes inscrit sur Mytennis'; */
 					$_SESSION['messages'] = $user ? ['message' => 'Vous êtes inscrit sur MyTennis', 'type' => 'success'] : ['message' => 'L adresse email indiquée est déjà utilisée', 'type' => 'danger'];
 					$view = 'views/index.php';
 					$pageTitle = "Accueil";
 					header('location:index.php');
 					exit;
 				  }
-				  /* else{
-					$_SESSION['messages'][] = 'L adresse email indiquée est déjà utilisée';
-					header('location:index.php');
-					exit;
-				  } */
 				}
 			  }
 			$view = 'views/form.php';
@@ -69,22 +63,17 @@ if(isset($_GET['action'])){
 								'is_admin' => $user['is_admin'],
 								'id' => $user['id'],
 						];
-						/* $_SESSION['messages'][] = 'Vous êtes connecté sur Mytennis'; */
 						$_SESSION['messages'] = $user ? ['message' => 'Vous êtes connecté sur MyTennis!', 'type' => 'success'] : ['message' => 'Identifiants incorrects', 'type' => 'danger'];
 						header('location:index.php');
 						exit;
 					}
-				/* 	else {
-						$_SESSION['messages'][] = 'Identifiants incorrects';
-						header('location:index.php?p=users&action=form');
-						exit;
-					} */
 				}
 			}
 			$view = 'views/index.php';
 			$pageTitle = "Formulaire d'inscription";
 			break;
 		case 'password' :
+			/* Feature non existante */
 			$view = 'views/resetpassword.php';
 			$pageTitle = "Réinitialisation du mot de passe";
 			break;

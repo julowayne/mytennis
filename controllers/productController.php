@@ -8,7 +8,14 @@ require('models/User.php');
 if(isset($_GET['action'])){
 	switch ($_GET['action']){
 		case 'product' :
-			$product = getProduct($_GET['id']);
+			if(isset($_GET['id'])){
+				$product = getProduct($_GET['id']);
+				if ($product == false){
+					$_SESSION['messages'] = ['message' => 'Le produit demandé n\'existe pas', 'type' => 'danger'];
+					header('Location:index.php');
+					exit;
+				}	
+			}
 			$view = 'views/product.php';
 			$pageTitle = "Liste des raquettes";  
 			break;

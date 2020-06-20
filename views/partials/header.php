@@ -7,13 +7,6 @@
                 <?php foreach($categories as $category): ?>
                     <div class="dropdown">
                         <a class="dropbtn" href="index.php?p=categories&action=menu&id=<?=$category['id']?>"><?=$category['name']?></a>
-                        <!-- <div class="dropdown-content">
-                            <?php foreach($childCategories as $childCategory): ?>
-                                <?php if($childCategory['parent_id'] == $category['id']): ?>
-                                    <a href="index.php?p=categories&action=menu&id=<?=$childCategory['parent_id']?>"><?=$childCategory['name']?></a>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </div> -->
                     </div>
                 <?php endforeach; ?>
             </div>
